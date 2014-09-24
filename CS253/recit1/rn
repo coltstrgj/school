@@ -1,0 +1,22 @@
+#! /bin/bash
+
+	old_suffix=$1
+	new_suffix=$2
+	
+	if [[ $1 == "" || $2 == "" ]]; then
+		echo "You have made a mistake" 1>&2
+		exit 1
+	fi
+	if [[ $#>2 ]]; then
+		echo "Too many arguments" 1>&2
+		exit 1
+	fi
+
+	for f in *.$old_suffix
+	do
+		new_name=${f%.*}.$new_suffix
+		if [[ !${mv $f $new_name} ]]
+			echo you fucked up
+		fi
+		echo Rename $f to $new_name
+	done

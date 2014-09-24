@@ -1,0 +1,134 @@
+#include <iostream>
+#include <string>
+#include <getopt.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <dirent.h>
+#include <glob.h>
+#include <vector>
+#include <sys/stat.h>
+
+using namespace std;
+void globDir(string &pat, glob_t &gres){
+        glob(pat.c_str(),GLOB_ONLYDIR|GLOB_MARK,NULL,&gres);
+}
+
+void globPat(string &pat, glob_t &gres){
+        glob(pat.c_str(),GLOB_MARK,NULL,&gres);
+}
+void globAll(string &pat, glob_t &gres){
+        glob(pat.c_str(),GLOB_MARK|GLOB_PERIOD,NULL,&gres);
+}
+
+
+
+vector<string> globFiles(string path, bool all = false, bool dir = false, string pattern = "*"){
+	vector<string> files;
+	cout<<"path:"<<path<<endl;
+	glob_t glob_result;
+	
+	
+	
+	//glob_result.gl_opendir(path.c_str());	
+	
+
+	if(all){
+		globPat(pattern, glob_result);
+	}else if(dir){
+		globDir(pattern, glob_result);
+	}else{
+		globAll(pattern, glob_result);
+	}
+	for(unsigned int i=0; i<glob_result.gl_pathc;i++){
+		files.push_back(string(glob_result.gl_pathv[i]));
+	}	
+	return files;
+}
+
+vector<string> globThem (vector<string> &globAll, string path, bool allFlg, bool fileFlg, bool dirFlg, string pattern){
+	vector<string> tmp = globFiles(path, 0, 0, pattern);
+	cout<<allFlg<<fileFlg<<dirFlg;
+	globAll.insert(globAll.end(),tmp.begin(), tmp.end());
+	cout<<endl<<path<<endl;
+//	globAll.insert(globAll.end(),tmp.begin(), tmp.end());
+	
+//	vector<string> tmp = globFiles(allFlg, fileFlg, dirFlg, pattern);	
+	for(unsigned int i=0; i<globAll.size(); i++){
+		cout << globAll[i] << "\n";	
+	}
+
+	return globAll;
+}
+
+
+int getAge(string fPath){
+	int days;
+	//stop clobbering my time struct
+	time_t rawtime;
+	struct tm *timeinfo;
+	time (&rawtime);
+	timeinfo = localtime (&rawtime);
+	days=timeinfo->tm_yday+(timeinfo->tm_year*365);
+	
+	struct stat attrib;			// create a file attribute structure
+        stat(fPath.c_str(), &attrib);		// get the attributes of afile.txt
+	timeinfo = gmtime(&(attrib.st_mtime));	
+	days=days - (timeinfo->tm_yday+(timeinfo->tm_year*365));
+	
+	cout<<days<<endl;	
+	return 0;
+}
+
+
+int main (int argc, char **argv){
+	bool dirFlg;
+	bool allFlg;
+	bool fileFlg;
+	string pattern;
+	int days = 0;
+	opterr = 0;
+	int c;
+	getAge("./that");
+	while ((c = getopt (argc, argv, "afdp:D:")) != -1)
+		switch (c){
+			case 'a':
+				allFlg = true;
+				break;
+			case 'f':
+				fileFlg = true;
+				break;
+			case 'd':
+				dirFlg = true;
+				break;
+			case 'p':
+				pattern = optarg;
+				break;
+			case 'D':
+				days = atoi(optarg);
+				break;
+			case '?':
+				if (optopt == 'p' || optopt == 'D')
+					cout << "Option -" << static_cast<char>(optopt) << " requires an argument.\n";
+				else//checks for any other options that arent defined
+					cout << "Unknown option '-" << static_cast<char>(optopt)  <<"'.\n";
+			default:
+				break;
+		}
+	//get the non option arguments(in the for loop, and display all of the read in options so that compiler stops hating
+	cout << "-a " << allFlg << " -f " << fileFlg << " -d "<< dirFlg << " -p " << pattern << days << "\n";
+	for (int index = optind; index < argc; index++){
+		cout << "Non-option argument %s\n" << argv[index];
+	}
+
+	
+	if(pattern == "")
+		pattern="*";
+	
+	vector<string> allThem;
+	globThem(allThem, "./", allFlg, fileFlg, dirFlg, pattern);
+/*	for(unsigned int i=0; i<allThem.size(); i++){
+		cout << allThem[i] << "\n";
+	}	
+*/
+	return 0;
+}
