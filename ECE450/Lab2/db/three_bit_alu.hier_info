@@ -1,0 +1,122 @@
+|three_bit_alu
+seven_seg[0] <= conversion:comb_4.port0
+seven_seg[1] <= conversion:comb_4.port0
+seven_seg[2] <= conversion:comb_4.port0
+seven_seg[3] <= conversion:comb_4.port0
+seven_seg[4] <= conversion:comb_4.port0
+seven_seg[5] <= conversion:comb_4.port0
+seven_seg[6] <= conversion:comb_4.port0
+ain[0] => ain[0].IN1
+ain[1] => ain[1].IN1
+ain[2] => ain[2].IN1
+bin[0] => bin[0].IN1
+bin[1] => bin[1].IN1
+bin[2] => bin[2].IN1
+funsel[0] => funsel[0].IN1
+funsel[1] => funsel[1].IN1
+
+
+|three_bit_alu|three_bit_out:comb_3
+funcOut[0] <= slice:comb_3.port0
+funcOut[1] <= slice:comb_4.port0
+funcOut[2] <= slice:comb_5.port0
+funcOut[3] <= slice:comb_5.port1
+funsel1 => funsel1.IN3
+funsel0 => funsel0.IN3
+ain[0] => ain[0].IN1
+ain[1] => ain[1].IN1
+ain[2] => ain[2].IN1
+bin[0] => bin[0].IN1
+bin[1] => bin[1].IN1
+bin[2] => bin[2].IN1
+
+
+|three_bit_alu|three_bit_out:comb_3|slice:comb_3
+fout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+cout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+funsel1 => frhs.IN1
+funsel1 => clhs.IN0
+funsel1 => flhs.IN1
+funsel1 => crhs.IN1
+funsel0 => fAc.IN0
+funsel0 => f0NAaXb.IN1
+funsel0 => cmid.IN1
+ain => bXcXa.IN1
+ain => aXb.IN0
+ain => clhs.IN1
+ain => aOb.IN0
+ain => aNAbOc.IN1
+bin => bXc.IN0
+bin => aXb.IN1
+bin => aOb.IN1
+bin => bOc.IN0
+cin => bXc.IN1
+cin => fAc.IN1
+cin => cAaOb.IN1
+cin => bOc.IN1
+
+
+|three_bit_alu|three_bit_out:comb_3|slice:comb_4
+fout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+cout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+funsel1 => frhs.IN1
+funsel1 => clhs.IN0
+funsel1 => flhs.IN1
+funsel1 => crhs.IN1
+funsel0 => fAc.IN0
+funsel0 => f0NAaXb.IN1
+funsel0 => cmid.IN1
+ain => bXcXa.IN1
+ain => aXb.IN0
+ain => clhs.IN1
+ain => aOb.IN0
+ain => aNAbOc.IN1
+bin => bXc.IN0
+bin => aXb.IN1
+bin => aOb.IN1
+bin => bOc.IN0
+cin => bXc.IN1
+cin => fAc.IN1
+cin => cAaOb.IN1
+cin => bOc.IN1
+
+
+|three_bit_alu|three_bit_out:comb_3|slice:comb_5
+fout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+cout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+funsel1 => frhs.IN1
+funsel1 => clhs.IN0
+funsel1 => flhs.IN1
+funsel1 => crhs.IN1
+funsel0 => fAc.IN0
+funsel0 => f0NAaXb.IN1
+funsel0 => cmid.IN1
+ain => bXcXa.IN1
+ain => aXb.IN0
+ain => clhs.IN1
+ain => aOb.IN0
+ain => aNAbOc.IN1
+bin => bXc.IN0
+bin => aXb.IN1
+bin => aOb.IN1
+bin => bOc.IN0
+cin => bXc.IN1
+cin => fAc.IN1
+cin => cAaOb.IN1
+cin => bOc.IN1
+
+
+|three_bit_alu|conversion:comb_4
+seven_seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+binaryIn[0] => Decoder0.IN3
+binaryIn[1] => Decoder0.IN2
+binaryIn[2] => Decoder0.IN1
+binaryIn[3] => Decoder0.IN0
+
+
