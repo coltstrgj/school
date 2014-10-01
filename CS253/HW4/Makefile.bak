@@ -1,0 +1,21 @@
+CXXFLAGS=-g -Wall -Wextra -ansi -pedantic -Werror -Wfatal-errors -Winit-self -Wshadow -Wlogical-op -Wcomment -Wctor-dtor-privacy -Wold-style-cast -D_GLIBCXX_DEBUG -fno-diagnostics-show-option
+
+#simple: simple.cc
+#	g++ $(CXXFLAGS) simple.cc -o simple `pkg-config gtkmm-3.0 --cflags --libs`
+main: Calendar.o CalendarBase.o
+	g++ $(CXXFLAGS) Calendar.o CalendarBase.o -o simplen `pkg-config gtkmm-3.0 --cflags --libs`
+
+
+Calendar.o: Calendar.cc Calendar.h
+	g++ $(CXXFLAGS) -c Calendar.cc  `pkg-config gtkmm-3.0 --cflags --libs`
+
+
+CalendarBase.o: CalendarBase.cc CalendarBase.h
+	g++ $(CXXFLAGS) -c CalendarBase.cc  `pkg-config gtkmm-3.0 --cflags --libs`
+
+
+
+
+
+clean:
+	-rm -f main *.o

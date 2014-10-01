@@ -1,0 +1,304 @@
+//////////////////////////////
+//Colt Darien               //
+//CS253 HW6                 //
+//April 29, 2014-May 5,2014 //
+//////////////////////////////
+#ifndef DupliCon_H_INCLUDED
+#define DupliCon_H_INCLUDED
+
+#include <cassert>
+#include <algorithm>
+////////////////////////////
+//will have to change all the returns of datum in LL to datum.whatever I called it in the struct
+template <typename T>
+class slink {
+  private:
+    struct node {
+        T datum;
+        struct node *next;
+    };
+    node *head, *tail;
+  public:
+    typedef unsigned int size_type;
+    typedef T key_type;
+    typedef T value_type;
+    class iterator {
+      private:
+        node *p;
+        // This private ctor is for the container class only:
+        friend class slink;
+        iterator(node *ptr) : p(ptr) { }
+      public:
+        iterator() : p(0) { }
+        iterator &operator++() {    // Preincrement
+            assert(p);
+            p = p->next;
+            return *this;
+        }
+        iterator operator++(int) {  // Postincrement
+            const iterator tmp = *this;
+            ++*this;
+            return tmp;
+        }
+        // *iterator: Return a reference to the datum
+        T &operator*() const {
+            assert(p);
+            return p->datum;
+        }
+        // iterator->: Return the address of the datum
+        T *operator->() const {
+            assert(p);
+            return &p->datum;
+        }
+        bool operator==(const iterator &rhs) const {
+            return p==rhs.p;
+        }
+        bool operator!=(const iterator &rhs) const {
+            return !(*this == rhs);
+        }
+    };
+
+    slink() : head(0), tail(0) {
+    }
+
+    ~slink() {
+        clear();
+    }
+
+    void clear() {
+        while (head) {
+            node *p = head->next;
+            delete head;
+            head = p;
+        }
+    }
+
+    // An O(1) operation:
+    bool empty() const {
+        return !head;
+    }
+
+    // An O(N) operation:
+    size_type size() const {
+        int count=0;
+        for (node *p = head; p; p=p->next)
+            count++;
+        return count;
+    }
+
+    void push_back(const T &datum) {
+        node *p = new node;
+        p->datum = datum;
+        p->next = 0;
+        if (!tail)      // empty list?
+            head = p;
+        else
+            tail->next = p;
+        tail = p;
+    }
+
+    iterator begin() const {
+        return head;
+    }
+
+    iterator end() const {
+        return 0;
+    }
+};
+
+/*
+//TODO
+    ctor that takes a half-open range of two iterators
+        These do not have to be iterators from a DupliCon. They can be iterators of any kind (but they must match each other).
+//
+    begin(), end()
+
+//
+    empty()
+
+//TODO may be done
+    size()
+        Returns the number of data items in the container. Return type is size_type. 
+//TODO may be done
+    unique_size()
+        Like size(), but returns the number of different data items actually stored in the container. This value may be smaller that that returned by size(), but not larger. 
+
+//TODO
+    max_size()
+        Return maximum possible number of elements allowed by this design, as a size_type. 
+
+//TODO may be done
+    find(const value_type &)
+        Look for an instance of the given value. Return an iterator pointing to it, or end() upon failure. If there are several items in the container equal to the given value, then return an iterator pointing to any of them. 
+
+//TODO may be done
+    count(const value_type &)
+        Like find, but returns how many times the given value occurs in the container. If the same item was inserted three times, and never erased, then return 3, as a size_type. 
+
+//TODO in the no clue section
+    insert(const value_type &)
+        Insert this value, in order. 
+
+//TODO
+    insert(iterator, iterator)
+        Insert all the values in this half-open range of two iterators.
+        These do not have to be iterators from a DupliCon. They can be iterators of any kind (but they must match each other). 
+
+//TODO int the no clue section
+    erase(const value_type &)
+        Erase all values from the collection that are equal to the given value.
+        Return how many were erased, as a size_type. 
+
+//TODO
+    erase(iterator)
+        This is an iterator from the DupliCon.
+        Erase a single value at that location. 
+
+//TODO may be done
+    clear()
+        Erase everything in the container. 
+
+//TODO        
+Required operations on DupliCon::iterator:
+    ==, !=
+    indirection
+    ->
+    pre-/post-increment/decrement 
+    The value exposed by the iterator must be read-only:
+    *iter=...; must not compile 
+
+*/
+template <typename T, class H = std::less<T> >
+class DupliCon {
+    public:
+        DupliCon()  { }
+        //are you allowed to do it like that?
+        ~DupliCon() {clear(); }
+        
+        //DupliCon(iterator start, iterator stop)
+
+        // copy constructor
+        DupliCon(const DupliCon &); 
+        // assignment opperator
+        DupliCon & operator=(const DupliCon &); 
+        
+    private:
+        //this will be the object in the LL and will make it so that we dont actually store duplicates
+        struct c_data{
+            int count=0;
+            T datum;    
+        };
+    public:
+
+        typedef T value_type;
+        typedef unsigned size_type;
+        //dont need this right? typedef DupliCon_iter<T> iterator;   
+        typedef slink<c_data>::iterator;
+    private:
+        slink<c_data> dat_list;
+        size_type total_count;
+        size_type unique_count;
+    public:
+        size_type size() const { return count; }
+//////////ruined
+/*        bool operator==(const iterator& rhs) const {   
+            return *this==rhs;
+        } 
+        bool operator!=(const iterator& rhs) const {
+            return !(*this==rhs);
+        }*/ 
+///////////probably done
+        const iterator begin(){   
+            return dat_list.begin();
+        }
+        const iterator end(){
+            return dat_list.end();
+        }
+        bool empty() const{
+            return dat_list.empty();
+        }
+//        int size() const{
+//            return count;    
+//        }
+        int unique_size() const{
+            return unique_count;
+        }
+        iterator find(const T &datum){
+            for (auto iter=begin(); iter!=end(); ++iter)
+                if(*iter.datum==datum){
+                    return *iter;    
+                }
+            return end();//we found nothing so we return end         
+        }
+        int count(const T &datum){ 
+            for (auto iter=begin(); iter!=end(); ++iter)
+                if(*iter.datum==datum)
+                    return iter.count;
+        }
+        void clear(){
+            dat_list.clear();
+            return;
+        }
+        
+
+//////////no clue
+        void insert(T datum){
+            //search LL to see if we already have this struct
+            for (auto iter=begin(); iter!=end(); ++iter)
+                if(*iter.datum==datum){
+                    ++ *iter.count;//now I know that pre increment is faster
+                    ++count;//not unique so only increment this one
+                    return;
+                }
+            //or else we need to make it because it is not(yet) a duplicate
+            c_data tmp;
+            tmp.count++;
+            tmp.datum = datum;
+            dat_list.insert(tmp);
+            ++count;
+            ++unique_count;
+            return;
+        } 
+        int erase(const T &datum) const {
+            //search LL to see if we already have this struct
+            for (auto iter=begin(); iter!=end(); ++iter)
+                if(*iter.datum==datum){
+                    //this will not work, but is a good start
+                    unsigned tmp =*iter.count;//now I know that pre increment is faster
+                    --count;//not unique so only increment this one
+                    return tmp;
+                }
+            return 0;
+        }
+
+        
+/*see greek exp for more details         
+        iterator &operator++() {        // No argument means pre-increment.
+           //check for if there are more duplicates somehow
+           //if not then use the LL ++ 
+            return the next iterator;
+        }
+
+        iterator operator++(iterator itt) {     // The (int) means post-increment.
+            const iteratortemp = Current iterator;   // Save the state before incrementing.
+            ++*itt;           // Let pre-increment do the work.
+            return temp;
+        } 
+*/
+
+
+
+};
+
+/*
+
+*/
+
+
+
+
+
+
+
+
+#endif /* DupliCon_H_INCLUDED */

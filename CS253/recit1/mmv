@@ -1,0 +1,16 @@
+#!/bin/bash
+
+num=$#
+dir=${!#}
+
+
+echo "Moving files to $dir"
+#for f in "$@"
+#do
+#	echo $f	
+#done
+
+for ((i = 1; i < $num; i++));do
+	f=${!i}
+	mv -i -v $f "$dir/$f" 
+done

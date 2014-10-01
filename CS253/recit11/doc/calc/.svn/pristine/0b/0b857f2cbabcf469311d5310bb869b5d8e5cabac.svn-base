@@ -1,0 +1,78 @@
+#include "calc.h"
+#include <ctype.h>
+
+base()
+{
+	extern int number_base;
+	int i;
+
+	printw("Number base? ");
+	i = getint();
+
+	if (i<2 || i>36) {
+		msg("Base must be 2<=base<=36");
+		return FAILURE;
+	}
+
+	set_current_mode();
+	return SUCCESS;
+}
+
+extern int print_zeros;
+
+char *
+arbitrary_base_output(base, num, width)
+number num;
+{
+	char *digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char buf[100];
+	char *outbuf;
+	static char outbuf_real[100];
+	int buflen, maxdigit, i;
+	unsigned long numb;
+
+	numb = num;
+	maxdigit = strlen(digits)-1;
+
+	/* Generate digits in reverse order */
+	buflen=0;
+	while (numb>0) {
+		buf[buflen++] = numb % base;
+		numb /= base;
+	}
+
+	/* Give them at least a zero! */
+	if (buflen==0)
+		buf[buflen++] = 0;
+
+	outbuf = outbuf_real;
+	/* Add leading zeros */
+	if (print_zeros) {
+		for (i=1; i<=width-buflen; i++)
+			*outbuf++ = '0';
+	}
+	
+
+	/* Put the digits into outbuf where they belong */
+	for (i=buflen-1; i>=0; i--) {
+		if (buf[i]>maxdigit) {		/* Can't represent this one */
+			char stuff[128];
+			sprintf(stuff, "<%d>", buf[i]);
+			strcat(outbuf, stuff);
+			outbuf += strlen(stuff);
+		}
+		else
+			*outbuf++ = digits[buf[i]];	/* alphanumeric digit */
+	}
+
+	*outbuf = '\0';
+	return outbuf_real;
+}
+
+fn_info base_info = {
+	base,	/* keyword routine */
+	"base",			/* keyword */
+	"number base",		/* description */
+	NULL,			/* input routine */
+	arbitrary_base_output,	/* output routine */
+};
