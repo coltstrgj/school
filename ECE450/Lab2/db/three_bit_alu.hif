@@ -31,7 +31,7 @@ ON
 # case_sensitive
 # source_file
 three_bit_alu.v
-36c78ac3aa2d95c2f6ce6c2bea79ef2e
+535fba5a9df329f3e13a2c53feded0c3
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -67,7 +67,7 @@ ON
 # case_sensitive
 # source_file
 three_bit_alu.v
-36c78ac3aa2d95c2f6ce6c2bea79ef2e
+535fba5a9df329f3e13a2c53feded0c3
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -103,7 +103,7 @@ ON
 # case_sensitive
 # source_file
 three_bit_alu.v
-36c78ac3aa2d95c2f6ce6c2bea79ef2e
+535fba5a9df329f3e13a2c53feded0c3
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -141,7 +141,7 @@ ON
 # case_sensitive
 # source_file
 three_bit_alu.v
-36c78ac3aa2d95c2f6ce6c2bea79ef2e
+535fba5a9df329f3e13a2c53feded0c3
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -160,7 +160,7 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
 # hierarchies {
-conversion:comb_4
+conversion:comb_5
 }
 # macro_sequence
 

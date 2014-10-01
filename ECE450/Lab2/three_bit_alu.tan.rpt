@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for three_bit_alu
-Wed Sep 24 10:47:36 2014
+Tue Sep 30 18:10:05 2014
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -39,7 +39,7 @@ applicable agreement for further details.
 +------------------------------+-------+---------------+-------------+-----------+--------------+------------+----------+--------------+
 ; Type                         ; Slack ; Required Time ; Actual Time ; From      ; To           ; From Clock ; To Clock ; Failed Paths ;
 +------------------------------+-------+---------------+-------------+-----------+--------------+------------+----------+--------------+
-; Worst-case tpd               ; N/A   ; None          ; 11.796 ns   ; funsel[1] ; seven_seg[3] ; --         ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 13.720 ns   ; funsel[0] ; seven_seg[3] ; --         ; --       ; 0            ;
 ; Total number of failed paths ;       ;               ;             ;           ;              ;            ;          ; 0            ;
 +------------------------------+-------+---------------+-------------+-----------+--------------+------------+----------+--------------+
 
@@ -94,62 +94,70 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------+-------------------+-----------------+-----------+--------------+
 ; Slack ; Required P2P Time ; Actual P2P Time ; From      ; To           ;
 +-------+-------------------+-----------------+-----------+--------------+
-; N/A   ; None              ; 11.796 ns       ; funsel[1] ; seven_seg[4] ;
-; N/A   ; None              ; 11.796 ns       ; funsel[1] ; seven_seg[3] ;
-; N/A   ; None              ; 11.782 ns       ; funsel[1] ; seven_seg[0] ;
-; N/A   ; None              ; 11.760 ns       ; funsel[1] ; seven_seg[2] ;
-; N/A   ; None              ; 11.756 ns       ; funsel[1] ; seven_seg[1] ;
-; N/A   ; None              ; 11.748 ns       ; funsel[0] ; seven_seg[4] ;
-; N/A   ; None              ; 11.748 ns       ; funsel[0] ; seven_seg[3] ;
-; N/A   ; None              ; 11.744 ns       ; funsel[0] ; seven_seg[0] ;
-; N/A   ; None              ; 11.727 ns       ; funsel[0] ; seven_seg[2] ;
-; N/A   ; None              ; 11.675 ns       ; funsel[0] ; seven_seg[1] ;
-; N/A   ; None              ; 11.537 ns       ; funsel[1] ; seven_seg[6] ;
-; N/A   ; None              ; 11.514 ns       ; funsel[1] ; seven_seg[5] ;
-; N/A   ; None              ; 11.484 ns       ; funsel[0] ; seven_seg[5] ;
-; N/A   ; None              ; 11.479 ns       ; funsel[0] ; seven_seg[6] ;
-; N/A   ; None              ; 8.602 ns        ; bin[0]    ; seven_seg[6] ;
-; N/A   ; None              ; 8.545 ns        ; bin[0]    ; seven_seg[4] ;
-; N/A   ; None              ; 8.545 ns        ; bin[0]    ; seven_seg[3] ;
-; N/A   ; None              ; 8.532 ns        ; bin[0]    ; seven_seg[0] ;
-; N/A   ; None              ; 8.512 ns        ; bin[0]    ; seven_seg[2] ;
-; N/A   ; None              ; 8.501 ns        ; bin[0]    ; seven_seg[1] ;
-; N/A   ; None              ; 8.463 ns        ; bin[1]    ; seven_seg[6] ;
-; N/A   ; None              ; 8.406 ns        ; bin[1]    ; seven_seg[4] ;
-; N/A   ; None              ; 8.406 ns        ; bin[1]    ; seven_seg[3] ;
-; N/A   ; None              ; 8.393 ns        ; bin[1]    ; seven_seg[0] ;
-; N/A   ; None              ; 8.373 ns        ; bin[1]    ; seven_seg[2] ;
-; N/A   ; None              ; 8.362 ns        ; bin[1]    ; seven_seg[1] ;
-; N/A   ; None              ; 8.267 ns        ; bin[0]    ; seven_seg[5] ;
-; N/A   ; None              ; 8.162 ns        ; bin[2]    ; seven_seg[4] ;
-; N/A   ; None              ; 8.162 ns        ; bin[2]    ; seven_seg[3] ;
-; N/A   ; None              ; 8.149 ns        ; bin[2]    ; seven_seg[0] ;
-; N/A   ; None              ; 8.129 ns        ; bin[2]    ; seven_seg[2] ;
-; N/A   ; None              ; 8.128 ns        ; bin[1]    ; seven_seg[5] ;
-; N/A   ; None              ; 8.118 ns        ; bin[2]    ; seven_seg[1] ;
-; N/A   ; None              ; 7.893 ns        ; bin[2]    ; seven_seg[6] ;
-; N/A   ; None              ; 7.884 ns        ; bin[2]    ; seven_seg[5] ;
-; N/A   ; None              ; 7.569 ns        ; ain[0]    ; seven_seg[6] ;
-; N/A   ; None              ; 7.512 ns        ; ain[0]    ; seven_seg[4] ;
-; N/A   ; None              ; 7.512 ns        ; ain[0]    ; seven_seg[3] ;
-; N/A   ; None              ; 7.499 ns        ; ain[0]    ; seven_seg[0] ;
-; N/A   ; None              ; 7.479 ns        ; ain[0]    ; seven_seg[2] ;
-; N/A   ; None              ; 7.468 ns        ; ain[0]    ; seven_seg[1] ;
-; N/A   ; None              ; 7.458 ns        ; ain[1]    ; seven_seg[6] ;
-; N/A   ; None              ; 7.456 ns        ; ain[2]    ; seven_seg[4] ;
-; N/A   ; None              ; 7.456 ns        ; ain[2]    ; seven_seg[3] ;
-; N/A   ; None              ; 7.443 ns        ; ain[2]    ; seven_seg[0] ;
-; N/A   ; None              ; 7.423 ns        ; ain[2]    ; seven_seg[2] ;
-; N/A   ; None              ; 7.412 ns        ; ain[2]    ; seven_seg[1] ;
-; N/A   ; None              ; 7.401 ns        ; ain[1]    ; seven_seg[4] ;
-; N/A   ; None              ; 7.401 ns        ; ain[1]    ; seven_seg[3] ;
-; N/A   ; None              ; 7.388 ns        ; ain[1]    ; seven_seg[0] ;
-; N/A   ; None              ; 7.368 ns        ; ain[1]    ; seven_seg[2] ;
-; N/A   ; None              ; 7.357 ns        ; ain[1]    ; seven_seg[1] ;
-; N/A   ; None              ; 7.234 ns        ; ain[0]    ; seven_seg[5] ;
-; N/A   ; None              ; 7.187 ns        ; ain[2]    ; seven_seg[6] ;
-; N/A   ; None              ; 7.178 ns        ; ain[2]    ; seven_seg[5] ;
-; N/A   ; None              ; 7.123 ns        ; ain[1]    ; seven_seg[5] ;
+; N/A   ; None              ; 13.720 ns       ; funsel[0] ; seven_seg[3] ;
+; N/A   ; None              ; 13.709 ns       ; funsel[0] ; seven_seg[4] ;
+; N/A   ; None              ; 13.701 ns       ; funsel[0] ; seven_seg[0] ;
+; N/A   ; None              ; 13.681 ns       ; funsel[0] ; seven_seg[1] ;
+; N/A   ; None              ; 13.656 ns       ; funsel[0] ; seven_seg[2] ;
+; N/A   ; None              ; 13.623 ns       ; funsel[1] ; seven_seg[3] ;
+; N/A   ; None              ; 13.612 ns       ; funsel[1] ; seven_seg[4] ;
+; N/A   ; None              ; 13.604 ns       ; funsel[1] ; seven_seg[0] ;
+; N/A   ; None              ; 13.584 ns       ; funsel[1] ; seven_seg[1] ;
+; N/A   ; None              ; 13.574 ns       ; funsel[0] ; seven_seg[6] ;
+; N/A   ; None              ; 13.559 ns       ; funsel[1] ; seven_seg[2] ;
+; N/A   ; None              ; 13.510 ns       ; funsel[0] ; seven_seg[5] ;
+; N/A   ; None              ; 13.477 ns       ; funsel[1] ; seven_seg[6] ;
+; N/A   ; None              ; 13.413 ns       ; funsel[1] ; seven_seg[5] ;
+; N/A   ; None              ; 12.658 ns       ; funsel[0] ; cout         ;
+; N/A   ; None              ; 12.561 ns       ; funsel[1] ; cout         ;
+; N/A   ; None              ; 9.671 ns        ; bin[0]    ; seven_seg[3] ;
+; N/A   ; None              ; 9.660 ns        ; bin[0]    ; seven_seg[4] ;
+; N/A   ; None              ; 9.652 ns        ; bin[0]    ; seven_seg[0] ;
+; N/A   ; None              ; 9.632 ns        ; bin[0]    ; seven_seg[1] ;
+; N/A   ; None              ; 9.607 ns        ; bin[0]    ; seven_seg[2] ;
+; N/A   ; None              ; 9.525 ns        ; bin[0]    ; seven_seg[6] ;
+; N/A   ; None              ; 9.461 ns        ; bin[0]    ; seven_seg[5] ;
+; N/A   ; None              ; 9.182 ns        ; bin[1]    ; seven_seg[3] ;
+; N/A   ; None              ; 9.171 ns        ; bin[1]    ; seven_seg[4] ;
+; N/A   ; None              ; 9.163 ns        ; bin[1]    ; seven_seg[0] ;
+; N/A   ; None              ; 9.143 ns        ; bin[1]    ; seven_seg[1] ;
+; N/A   ; None              ; 9.118 ns        ; bin[1]    ; seven_seg[2] ;
+; N/A   ; None              ; 9.036 ns        ; bin[1]    ; seven_seg[6] ;
+; N/A   ; None              ; 8.972 ns        ; bin[1]    ; seven_seg[5] ;
+; N/A   ; None              ; 8.609 ns        ; bin[0]    ; cout         ;
+; N/A   ; None              ; 8.586 ns        ; ain[1]    ; seven_seg[3] ;
+; N/A   ; None              ; 8.575 ns        ; ain[1]    ; seven_seg[4] ;
+; N/A   ; None              ; 8.567 ns        ; ain[1]    ; seven_seg[0] ;
+; N/A   ; None              ; 8.547 ns        ; ain[1]    ; seven_seg[1] ;
+; N/A   ; None              ; 8.522 ns        ; ain[1]    ; seven_seg[2] ;
+; N/A   ; None              ; 8.514 ns        ; bin[2]    ; seven_seg[3] ;
+; N/A   ; None              ; 8.503 ns        ; bin[2]    ; seven_seg[4] ;
+; N/A   ; None              ; 8.495 ns        ; bin[2]    ; seven_seg[0] ;
+; N/A   ; None              ; 8.475 ns        ; bin[2]    ; seven_seg[1] ;
+; N/A   ; None              ; 8.450 ns        ; bin[2]    ; seven_seg[2] ;
+; N/A   ; None              ; 8.440 ns        ; ain[1]    ; seven_seg[6] ;
+; N/A   ; None              ; 8.376 ns        ; ain[1]    ; seven_seg[5] ;
+; N/A   ; None              ; 8.375 ns        ; ain[0]    ; seven_seg[3] ;
+; N/A   ; None              ; 8.368 ns        ; bin[2]    ; seven_seg[6] ;
+; N/A   ; None              ; 8.364 ns        ; ain[0]    ; seven_seg[4] ;
+; N/A   ; None              ; 8.356 ns        ; ain[0]    ; seven_seg[0] ;
+; N/A   ; None              ; 8.336 ns        ; ain[0]    ; seven_seg[1] ;
+; N/A   ; None              ; 8.311 ns        ; ain[0]    ; seven_seg[2] ;
+; N/A   ; None              ; 8.304 ns        ; bin[2]    ; seven_seg[5] ;
+; N/A   ; None              ; 8.229 ns        ; ain[0]    ; seven_seg[6] ;
+; N/A   ; None              ; 8.165 ns        ; ain[0]    ; seven_seg[5] ;
+; N/A   ; None              ; 8.120 ns        ; bin[1]    ; cout         ;
+; N/A   ; None              ; 7.636 ns        ; bin[2]    ; cout         ;
+; N/A   ; None              ; 7.524 ns        ; ain[1]    ; cout         ;
+; N/A   ; None              ; 7.459 ns        ; ain[2]    ; seven_seg[3] ;
+; N/A   ; None              ; 7.448 ns        ; ain[2]    ; seven_seg[4] ;
+; N/A   ; None              ; 7.440 ns        ; ain[2]    ; seven_seg[0] ;
+; N/A   ; None              ; 7.420 ns        ; ain[2]    ; seven_seg[1] ;
+; N/A   ; None              ; 7.395 ns        ; ain[2]    ; seven_seg[2] ;
+; N/A   ; None              ; 7.313 ns        ; ain[0]    ; cout         ;
+; N/A   ; None              ; 7.313 ns        ; ain[2]    ; seven_seg[6] ;
+; N/A   ; None              ; 7.249 ns        ; ain[2]    ; seven_seg[5] ;
+; N/A   ; None              ; 6.611 ns        ; ain[2]    ; cout         ;
 +-------+-------------------+-----------------+-----------+--------------+
 
 
@@ -159,19 +167,21 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Sep 24 10:47:36 2014
+    Info: Processing started: Tue Sep 30 18:10:05 2014
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off three_bit_alu -c three_bit_alu --timing_analysis_only
-Info: Longest tpd from source pin "funsel[1]" to destination pin "seven_seg[4]" is 11.796 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.852 ns) = 0.852 ns; Loc. = PIN_V2; Fanout = 5; PIN Node = 'funsel[1]'
-    Info: 2: + IC(5.950 ns) + CELL(0.420 ns) = 7.222 ns; Loc. = LCCOMB_X29_Y4_N0; Fanout = 1; COMB Node = 'three_bit_out:comb_3|slice:comb_4|fout~0'
-    Info: 3: + IC(0.250 ns) + CELL(0.150 ns) = 7.622 ns; Loc. = LCCOMB_X29_Y4_N18; Fanout = 6; COMB Node = 'three_bit_out:comb_3|slice:comb_4|fout~1'
-    Info: 4: + IC(0.311 ns) + CELL(0.150 ns) = 8.083 ns; Loc. = LCCOMB_X29_Y4_N10; Fanout = 2; COMB Node = 'conversion:comb_4|WideOr3~0'
-    Info: 5: + IC(0.915 ns) + CELL(2.798 ns) = 11.796 ns; Loc. = PIN_AE11; Fanout = 0; PIN Node = 'seven_seg[4]'
-    Info: Total cell delay = 4.370 ns ( 37.05 % )
-    Info: Total interconnect delay = 7.426 ns ( 62.95 % )
+Info: Longest tpd from source pin "funsel[0]" to destination pin "seven_seg[3]" is 13.720 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.852 ns) = 0.852 ns; Loc. = PIN_V1; Fanout = 6; PIN Node = 'funsel[0]'
+    Info: 2: + IC(6.053 ns) + CELL(0.438 ns) = 7.343 ns; Loc. = LCCOMB_X29_Y4_N16; Fanout = 1; COMB Node = 'three_bit_out:comb_3|slice:comb_4|Mux1~0'
+    Info: 3: + IC(0.266 ns) + CELL(0.438 ns) = 8.047 ns; Loc. = LCCOMB_X29_Y4_N2; Fanout = 2; COMB Node = 'three_bit_out:comb_3|slice:comb_4|Mux1~1'
+    Info: 4: + IC(0.290 ns) + CELL(0.419 ns) = 8.756 ns; Loc. = LCCOMB_X29_Y4_N20; Fanout = 1; COMB Node = 'three_bit_out:comb_3|slice:comb_5|Mux0~0'
+    Info: 5: + IC(0.251 ns) + CELL(0.271 ns) = 9.278 ns; Loc. = LCCOMB_X29_Y4_N22; Fanout = 7; COMB Node = 'three_bit_out:comb_3|slice:comb_5|Mux0~1'
+    Info: 6: + IC(0.310 ns) + CELL(0.419 ns) = 10.007 ns; Loc. = LCCOMB_X29_Y4_N10; Fanout = 1; COMB Node = 'conversion:comb_5|WideOr3~0'
+    Info: 7: + IC(0.915 ns) + CELL(2.798 ns) = 13.720 ns; Loc. = PIN_AD11; Fanout = 0; PIN Node = 'seven_seg[3]'
+    Info: Total cell delay = 5.635 ns ( 41.07 % )
+    Info: Total interconnect delay = 8.085 ns ( 58.93 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 168 megabytes
-    Info: Processing ended: Wed Sep 24 10:47:36 2014
+    Info: Processing ended: Tue Sep 30 18:10:05 2014
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

@@ -1,9 +1,14 @@
-module three_bit_alu(seven_seg, ain, bin, funsel);
+module three_bit_alu(seven_seg, cout, ain, bin, funsel);
 	output wire[6:0] seven_seg;
+	output reg cout;
 	input [2:0] ain, bin;
 	input [1:0] funsel;
 	wire [3:0] three_bit_alu;
-	three_bit_out (three_bit_alu, funsel[1], funsel[0], ain, bin); 
+	three_bit_out (three_bit_alu, funsel, ain, bin); 
+	always @*
+		begin
+			cout = three_bit_alu[3];
+		end
 	conversion (seven_seg, three_bit_alu);
 
 endmodule
@@ -35,52 +40,87 @@ module conversion(seven_seg, binaryIn);
 	
 	
 endmodule
+module  slice (fout, cout, funsel[1:0], ain, bin, cin);
+    input [1:0] funsel;
+    input ain, bin, cin;
+    output reg fout, cout;
+	always @*
+		begin
+			case(funsel)
+				0:	begin
+						fout = ain ^ bin ^ cin;
+						cout = (ain & bin) + (cin & (ain ^ bin)); 
+					end
+				1: 	begin
+						fout = ain ^ bin ^ cin;
+						cout = (~ain & bin) + (~cin & (~ain ^ ~bin)); 
+					end
+				2:	begin
+						fout = ain ^ bin;
+						cout = 0; 
+					end
+				3:	begin
+						fout = cin;
+						cout = ain; 
+					end
+			endcase
+		end
 
+
+endmodule
+/*
 module  slice (fout, cout, funsel1, funsel0, ain, bin, cin);
     input funsel1, funsel0, ain, bin, cin;
     output fout, cout;
-    wire bXc, bXcXa, f1NOT, flhs, aXb, f0NOT, fAc, f0NAaXb, aXbAf0NOf0Ac, frhs, clhs, aOb, cAaOb, cmid, bAc, bOc, aNOT, aNAbOc, crhs, partc; 
+    wire bXc, bXcXa, f1NOT, flhs, aXb, f0NOT, f0Ac, f0NAaXb, aXbAf0NOf0Ac, frhs, clhs, aOb, cAaOb, f0AaNAbOc, cmid, bAc, bOc, aNOT, aNAbOc, lotsofc, crhs, partc, aAbOc; //aOb
    
     xor (bXc, bin, cin),
         (bXcXa, bXc, ain);
     not (f1NOT, funsel1);
     and (flhs, f1NOT, bXcXa);
-    
+    //flhs=f1'(ax(bxc))
     xor (aXb, ain, bin);
     not (f0NOT, funsel0);
-    and (fAc, funsel0, cin),
+    and (f0Ac, funsel0, cin),
         (f0NAaXb, aXb, f0NOT);
-    or  (aXbAf0NOf0Ac, f0NAaXb, fAc);
+    or  (aXbAf0NOf0Ac, f0NAaXb, f0Ac);
     and (frhs, aXbAf0NOf0Ac, funsel1);
+    //frhs=f1(f0'(axb)+f0c)
+    or  (fout, flhs, frhs);
 
-    or  (fout, lhs, rhs),
-
-    
-        (clhs, ain, funsel1);
-    
-    or  (aOb, ain, bin);
+/////////////////////////////////////////////////////
+    /////////cout from here down
+	and	(clhs, ain, funsel1);
+	//clhs=AF1
+ /*   or  (aOb, ain, bin);
     and (cAaOb, aOb, cin),
         (cmid, cAaOb, f0NOT);//could be combined with one above if accuracy is not an issue
-    
+    //cmid=f0'(c(a+b))////wrong on the net*//*
+    //or	(bOc, bin, cin);
+    and	(aAbOc, ain, bOc),
+		(cmid, f0NOT, aAbOc);
+    //cmid=F0(a(b+c))
     and (bAc, bin, cin);
     or  (bOc, bin, cin);
     not (aNOT, ain);
-    and (aNAbOc, aNOT, bOc),
-        (crhs, aNAbOc, f1NOT);//could be combined
-
+    and (aNAbOc, anot, bOc),
+        (f0AaNAbOc, aNAbOc, funsel0);//could be combined
+    or	(lotsofc, f0AaNAbOc, bAc);
+    and	(crhs, f1NOT, lotsofc);
+	//crhs=f1'((bc)+ f0(a'(b+c)))
     or  (partc, crhs, cmid),
         (cout, clhs, partc);//could be combined
 
 endmodule
+*/
 
-
-module  three_bit_out (funcOut[3:0], funsel1, funsel0, ain[2:0], bin[2:0]);
+module  three_bit_out (funcOut[3:0], funsel[1:0], ain[2:0], bin[2:0]);
     output [3:0] funcOut;
-    input funsel1, funsel0;
+    input [1:0] funsel;
     input [2:0] ain, bin;
     wire c0, c1;//need c2?
     
-    slice   (funcOut[0], c0, funsel1, funsel0, ain[0], bin[0], 0),//will this work?
-            (funcOut[1], c1, funsel1, funsel0, ain[1], bin[1], c0),
-            (funcOut[2], funcOut[3], funsel1, funsel0, ain[2], bin[2], c1);
+    slice   (funcOut[0], c0, funsel, ain[0], bin[0], 0);//will this work?
+    slice	(funcOut[1], c1, funsel, ain[1], bin[1], c0);
+    slice	(funcOut[2], funcOut[3], funsel, ain[2], bin[2], c1);
 endmodule

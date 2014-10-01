@@ -1,5 +1,5 @@
 Flow report for three_bit_alu
-Wed Sep 24 10:47:36 2014
+Tue Sep 30 18:10:05 2014
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +------------------------------------+----------------------------------------------+
-; Flow Status                        ; Successful - Wed Sep 24 10:47:36 2014        ;
+; Flow Status                        ; Successful - Tue Sep 30 18:10:05 2014        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; three_bit_alu                                ;
 ; Top-level Entity Name              ; three_bit_alu                                ;
@@ -46,11 +46,11 @@ applicable agreement for further details.
 ; Device                             ; EP2C35F672C6                                 ;
 ; Timing Models                      ; Final                                        ;
 ; Met timing requirements            ; Yes                                          ;
-; Total logic elements               ; 13 / 33,216 ( < 1 % )                        ;
-;     Total combinational functions  ; 13 / 33,216 ( < 1 % )                        ;
+; Total logic elements               ; 17 / 33,216 ( < 1 % )                        ;
+;     Total combinational functions  ; 17 / 33,216 ( < 1 % )                        ;
 ;     Dedicated logic registers      ; 0 / 33,216 ( 0 % )                           ;
 ; Total registers                    ; 0                                            ;
-; Total pins                         ; 15 / 475 ( 3 % )                             ;
+; Total pins                         ; 16 / 475 ( 3 % )                             ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                          ;
 ; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                               ;
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/24/2014 10:47:25 ;
+; Start date & time ; 09/30/2014 18:09:55 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; three_bit_alu       ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ applicable agreement for further details.
 +------------------------------------+----------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                            ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+----------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 207120306105141.141157724506984  ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 207120306105141.141212219506020  ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP             ; 85                               ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP             ; 0                                ; --            ; --          ; --             ;
 ; MISC_FILE                          ; U:/ECE450/Lab2/three_bit_alu.dpf ; --            ; --          ; --             ;
@@ -91,9 +91,9 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis    ; 00:00:02     ; 1.0                     ; 204 MB              ; 00:00:01                           ;
 ; Fitter                  ; 00:00:04     ; 1.0                     ; 263 MB              ; 00:00:04                           ;
-; Assembler               ; 00:00:01     ; 1.0                     ; 249 MB              ; 00:00:01                           ;
+; Assembler               ; 00:00:02     ; 1.0                     ; 249 MB              ; 00:00:01                           ;
 ; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 153 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:07     ; --                      ; --                  ; 00:00:06                           ;
+; Total                   ; 00:00:08     ; --                      ; --                  ; 00:00:06                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
