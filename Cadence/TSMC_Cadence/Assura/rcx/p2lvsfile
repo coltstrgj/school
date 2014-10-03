@@ -1,0 +1,17 @@
+pro_layer=field  ext_layer=nw_net,psub;
+pro_layer=active ext_layer=ndiff_net,pdiff_net;
+pro_layer=poly   ext_layer=plyx  sheet_res=7.9;
+pro_layer=metal1 ext_layer=m1x6  sheet_res=0.078;
+pro_layer=metal2 ext_layer=m2x56 sheet_res=0.078;
+pro_layer=metal3 ext_layer=m3x6  sheet_res=0.078;
+pro_layer=metal4 ext_layer=m4x6  sheet_res=0.078;
+pro_layer=metal5 ext_layer=m5x6  sheet_res=0.078;
+pro_layer=metal6 ext_layer=m6x6  sheet_res=0.0178;
+ext_cont=VIA12   res=6.4;
+ext_cont=v23     res=6.4;
+ext_cont=v34     res=6.4;
+ext_cont=v45     res=6.4;
+ext_cont=v56     res=2.54;
+ext_cont=co_po   res=7.8;	
+ext_cont=co_ndiff res=11;
+ext_cont=co_pdiff res=10;

@@ -1,0 +1,66 @@
+;
+; sample RSF for running Assura LVS from UNIX
+; Change the parameters for your specific requirement
+
+avParameters(
+
+; DFII only - use the next line for DFII input
+;  ?inputLayout ( "df2" "<library>" )
+;  ?viewName  "layout"
+
+; GDS2 only - use the next line for GDS2 input
+  ?inputLayout ( "GDS2" "<file_name>" )  ; specify full path to gds file
+
+; Top cell name
+  ?cellName  "<cell_name>"
+
+  ?rulesFile "./extract.rul"
+  ?runName   "myRun"		;PRINTFILE
+  ?workingDirectory "./rundir"
+  ?avrpt t			;run avrpt at end of job
+  ?textPriOnly t	;TEXT-PRI-ONLY YES
+  ?joinPins    top	;nil|top|allLevels :virtual connection is on @top level
+  ?flagNon45   t
+  ;;; Point to the Assura RCX technology directory
+  ?technology "assura_tech"
+  ?techLib    "../assura_tech.lib"
+
+;;;------ EXTRACT RULE SWITCHES-----
+; ?set ("DNW_DIODE")    ; switch to enable the extraction of PW_DNW and DNW_PSUB diodes
+; ?set ("INCLUDE_DEVICES_WITHOUT_PCELLS") ; needed for TSMC IO
+
+) ;end of avParameters
+
+; To load ASSURA LVS COMPARE FILE
+load( "./compare.rul" )
+
+;----------------------------------------------------------------------------
+; avCompareRules Section from Run Submit Form
+;----------------------------------------------------------------------------
+
+avCompareRules(
+   schematic(
+      netlist( cdl "lvs.add" )   ; <prepend emptySubcircuit> CDL mode should uncomment this line
+      netlist( cdl "<cdlnetlist>" )
+;     netlist( dfII "./myRun.vlr" ) ; to specify df2 schematic
+   )
+; use bind.rul for schematic netlist, bind_cdl.rul for cdl netlist
+;  bindingFile("./bind.rul")
+)
+
+;----------------------------------------------------------------------------
+; avCompareRules Section from Options Form
+;----------------------------------------------------------------------------
+
+avCompareRules(
+;     abortOnUnboundDevices( nil )
+;     echoUsedAvCompareRules()
+;     filterReduceStatistics( (preExpand t) )
+;     listFilteredDevices()
+;     listXRef()
+;     verifyTopLayPins( nil )       ; needed for block testing
+;     verifyTopSchPins( nil )
+);;;avCompareRules
+
+
+avLVS()

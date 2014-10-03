@@ -1,0 +1,70 @@
+
+; sample RSF for running Assura RCX from UNIX
+; Change the parameters for your specific requirement
+; Assura LVS should have been run already on the cell
+;   with results in the "rundir" directory
+
+
+avParameters(
+	?workingDirectory "./rundir"
+	?runName "myRun"
+	?inputLayout ( "df2" "<myLib>" )
+	?cellName "<cell_name>"
+	?technology "tsmc18mm_rcx_tech"
+	?techLib "./assura_tech.lib"
+)
+
+rcxParameters(
+	?lvsSource "assura"
+	?runName "myRun"
+	?type "full"
+
+; set ?extract to: 
+;  "cap" for parasitic capacitors,
+;  "res" for parasitic resistors,
+;  "both" for both
+	?extract "cap"
+
+; For parasitic capacitors, set ?capExtractMode to: 
+;  "decoupled" for lumped caps to ground,
+;  "coupled" to retain caps between nets
+	?capExtractMode "decoupled"
+
+; If extracting caps, 
+; the name of the ground node must be included
+	?capGround "gnd!"
+
+; capCouplingFactor needed only for decoupled caps
+	?capCouplingFactor 1.0
+
+	?netNameSpace "layout"
+
+; outputFormat can be a Spice netlist or av_extracted view
+;  for av_extracted view use "dfII" 
+;  for Spice netlist use "spice" 
+        ?outputFormat "dfII"
+;	?outputFormat "spice"
+
+; Name the av_extracted view for dfII output:
+	?extractedView "av_extracted"
+
+; Give a spice output name if the format is spice:
+;	?output "myCell.spice"
+
+	?maxFractureLength "infinite"
+	?fractureLengthUnits "microns"
+	?tempdir "/tmp"
+	?capModels "no"
+	?parasiticCapModels "yes"
+	?resModels "no"
+	?parasiticResModels "comment"
+	?outputNetNameSpace "schematic"
+	?subNodeChar "#"
+	?hierarchyDelimiter "/"
+	?toggleXgl t
+	?parasiticResWidth nil
+	?extractMosDiffusionRes nil
+        ?extractMosDiffusionAp  t
+)
+
+avRCX()

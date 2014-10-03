@@ -1,0 +1,13 @@
+;------------------------------------------------------------------------
+;---------------------------  Setup Bindkeys  ---------------------------
+;------------------------------------------------------------------------
+printf("\nFYI: Load bindkey: schBindKeys.il, leBindKeys.il, lxBindKeys.il")
+load(prependInstallPath("/samples/local/schBindKeys.il"))
+load(prependInstallPath("/samples/local/leBindKeys.il"))
+load(prependInstallPath("/samples/local/lxBindKeys.il"))
+;;
+;; Load Cadence environment file
+;; Load Cadence environment file
+;-------------------- End of File --------------------------------------------
+
+

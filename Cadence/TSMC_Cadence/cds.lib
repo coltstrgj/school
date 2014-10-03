@@ -1,0 +1,13 @@
+# File Created by Tucker, Kern at Fri Feb  1 16:23:10 2013
+# assisted by CdsLibEditor
+DEFINE analogLib $CDSHOME/tools/dfII/etc/cdslib/artist/analogLib
+DEFINE avTech $ASSURAHOME/tools.lnx86/assura/etc/avtech/avTech
+DEFINE tsmc18rf tsmc18rf
+DEFINE basic $CDSHOME/tools/dfII/etc/cdslib/basic
+DEFINE rfLib $CDSHOME/tools/dfII/samples/artist/rfLib
+DEFINE US_8ths $CDSHOME/tools/dfII/etc/cdslib/sheets/US_8ths
+DEFINE ahdlLib $CDSHOME/tools/dfII/samples/artist/ahdlLib
+
+DEFINE ECE331Labs /top/students/UNGRAD/ECE/cdarien/home/Cadence/TSMC_Cadence/ECE331Labs
+DEFINE ECE450 /top/students/UNGRAD/ECE/cdarien/home/Cadence/TSMC_Cadence/ECE450
+DEFINE ECE451 /top/students/UNGRAD/ECE/cdarien/home/Cadence/TSMC_Cadence/ECE451

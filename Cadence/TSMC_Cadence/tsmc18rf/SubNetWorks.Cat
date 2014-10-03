@@ -1,0 +1,5 @@
+TDMCHECKPOINT="1.0"
+tsmc18rf/dnwcon type="cell"
+tsmc18rf/nwcon type="cell"
+tsmc18rf/psubcon type="cell"
+tsmc18rf/pwcon type="cell"

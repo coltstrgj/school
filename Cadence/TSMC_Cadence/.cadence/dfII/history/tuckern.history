@@ -1,0 +1,1 @@
+("testCell:/\ttestCell testLib schematic" (("open" (nil hierarchy "/{testLib testCell schematic }:a"))) (((-1.49375 -0.80625) (-0.00625 0.31875)) "a" "Schematics" 0))

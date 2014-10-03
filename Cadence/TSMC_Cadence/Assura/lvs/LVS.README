@@ -1,0 +1,37 @@
+
+
+			README File for Assura LVS
+		     ================================
+
+
+ INTRODUCTION:
+
+     Following are the descriptions for those files related to Assura LVS:
+
+  	LVS.README	- LVS readme file (this file)
+  	extract.rul     - Device extraction file
+  	compare.rul     - LVS compare rule file
+	bind.rul	- Binding file to be used in DFII Assura LVS (for DFII flow only)
+  	lvs.rsf         - sample RSF 
+  	lvs.add	        - subckt netlist to prepend to output of CDL netlist
+			  for LVS checking (used in CDL flow only)
+
+*************************************************************************
+  Note: 
+     1. First refer to the notice messages and status logs in the head of 
+	each command file.
+
+     2. The sample RSF file is provided as a template to run Assura LVS 
+	from Unix command line. Users are encouraged to edit this file 
+	as needed.
+
+*******************************************************************************
+!!!!!!-IMPORTANT-IMPORTANT-IMPORTANT-!!!!!!!!!!!-IMPORTANT-IMPORTANT-IMPORTANT-!!!!!
+
+Before running LVS (flow for batch mode LVS):
+
+1. netlist your circuit as 'out.cdl' (cdl format)
+2. cat lvs.add out.cdl > chip.cdl ;makes the final netlist for LVS checking
+
+!!!!!!-IMPORTANT-IMPORTANT-IMPORTANT-!!!!!!!!!!!-IMPORTANT-IMPORTANT-IMPORTANT-!!!!!
+*******************************************************************************

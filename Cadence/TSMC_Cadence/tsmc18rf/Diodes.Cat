@@ -1,0 +1,8 @@
+TDMCHECKPOINT="1.0"
+keepEmptyCategory type="unknown"
+tsmc18rf/dioden type="cell"
+tsmc18rf/dioden3v type="cell"
+tsmc18rf/diodenw type="cell"
+tsmc18rf/diodenw3v type="cell"
+tsmc18rf/diodep type="cell"
+tsmc18rf/diodep3v type="cell"

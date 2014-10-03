@@ -1,0 +1,34 @@
+/**********************************************************************************
+; CURRECT USAGE
+;
+;   1) Rules contains two layer definition section. One for GDS2 format and the
+;      other for DF2 format.  This deck can be used to run on either of the
+;      above specified formats. 
+;
+;   2) To use a switch, use the following command in the control file (.rsf)
+;                 avParameters(
+;                    ?set "switch_name" 
+;                    ...
+;                    ...
+;                 ) ; end avParameters
+;
+;   3) By default in this DRC command file assumes "Normal Top Metal"(thickness 9900A) as the top metal. 
+;      If "Thick Top Metal"(thickness 20K A) is used, please turn on the switch in the .rsf file. 
+;      Remove the semicolon at the begin of the line ;?set "THICK_TOP_METAL" to activate the switch.
+;   
+;***********************************************************************************/
+
+avParameters(
+  ?inputLayout ( "gds2" "<gdsFileName>" )
+; ?inputLayout ( "df2" "<LibraryName>") 
+; ?viewName "layout"
+
+  ?cellName "<cellName>"
+  ?runName "<runName>"
+; ?workingDirectory "< workingDirectory >"
+  ?rulesFile "<ruleFile>"
+  ?avrpt t
+  
+;?set "THICK_TOP_METAL"		; M$ thickness is 20K for MM/RF process
+
+)

@@ -1,0 +1,481 @@
+/***********************************************************************
+; 0.15um Assura ANTENNA DRC COMMAND FILE - UL18S3_6M.ANT.25a (VER 2.5a,04/26/2004)
+; FOR TSMC 0.18UM LOGIC/MM/RF 1P6M SALICIDE 1.8V/3.3V PROCESS
+; (DESIGN RULE DOCUMENT: T-018-LO-DR-001 Rev2.5
+;                        T-018-MM-DR-001 Rev1.3 )                       
+;**********************************************************************/
+/*----------------------------------------------------------------------
+;  DISCLAIMER
+;
+;  The information contained herein is provided by TSMC on an "AS IS" basis
+;  without any warranty, and TSMC has no obligation to support or otherwise
+;  maintain the information.  TSMC disclaims any representation that the
+;  information does not infringe any intellectual property rights or proprietary
+;  rights of any third parties.  There are no other warranties given by TSMC,
+;  whether express, implied or statutory, including, without limitation, implied
+;  warranties of merchantability and fitness for a particular purpose.
+;
+;  STATEMENT OF USE
+;
+;  This information contains confidential and proprietary information of TSMC.
+;  No part of this information may be reproduced, transmitted, transcribed,
+;  stored in a retrieval system, or translated into any human or computer
+;  language, in any form or by any means, electronic, mechanical, magnetic,
+;  optical, chemical, manual, or otherwise, without the prior written permission
+;  of TSMC.  This information was prepared for informational purpose and is for
+;  use by TSMC's customers only.  TSMC reserves the right to make changes in the
+;  information at any time and without notice.
+;
+;--------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------
+;  REVISION:
+;  2.5a  04/26/04 Yating Chuang
+;        - Newly created
+;---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------
+; By default in this DRC command file assumes "Normal Top Metal"(thickness 9900A) as the top metal. 
+; If "Thick Top Metal"(thickness 20K A) is used, please turn on the switch in the .rsf file. 
+; Remove the semicolon at the begin of the line ;?set "THICK_TOP_METAL" to activate the switch.
+;---------------------------------------------------------------------------*/
+
+drcExtractRules(
+	
+layerDefs( "gds2"
+    diffi = layer( 3 )
+    pdiffi = layer( 11 )
+    ndiffi = layer( 12 )
+    od2i = layer( 4 )
+    polyi = layer( 13 )
+    coi = layer( 15 )
+    m1i = layer( 16 type(0) )
+    via1i = layer( 17 )
+    m2i = layer( 18 type(0) )
+    via2i = layer( 27 )
+    m3i = layer( 28 type(0) )
+    via3i = layer( 29 )
+    m4i = layer( 31 type(0) )
+    via4i = layer( 32 )
+    m5i = layer( 33 type(0) )
+    via5i = layer( 39 )
+    m6i = layer( 38 type(0) )
+    viadi = layer( 167 )
+    mdi = layer( 168 type(0) )
+;In TSMC standard mapping, datatype 1 is for dummy metal and datatype 2 is for metal slot
+; Metal Slot layers
+;
+    m1sloti = layer( 16 type(2) )
+    m2sloti = layer( 18 type(2) )
+    m3sloti = layer( 28 type(2) )
+    m4sloti = layer( 31 type(2) )
+    m5sloti = layer( 33 type(2) )
+    m6sloti = layer( 38 type(2) )
+    mdsloti = layer( 168 type(2) )
+    m1dmy = layer( 16 type(1) )
+    m2dmy = layer( 18 type(1) )
+    m3dmy = layer( 28 type(1) )
+    m4dmy = layer( 31 type(1) )
+    m5dmy = layer( 33 type(1) )
+    m6dmy = layer( 38 type(1) )
+    mddmy = layer( 168 type(1) )
+    ctm2i = layer( 67 type(2) )
+    ctm3i = layer( 67 type(3) )
+    ctm4i = layer( 67 type(4) )
+    ctm5i = layer( 67 type(5) )
+    
+)
+layerDefs( "df2"
+    diffi = layer( "DIFF" )
+    pdiffi = layer( "PDIFF" )
+    ndiffi = layer( "NDIFF" )
+    od2i = layer( "OD2" )
+    polyi = layer( "POLY1" )
+    coi = layer( "CONT" )
+    m1i = layer( "METAL1" type("drawing") )
+    via1i = layer( "VIA12" )
+    m2i = layer( "METAL2" type("drawing") )
+    via2i = layer( "VIA23" )
+    m3i = layer( "METAL3" type("drawing") )
+    via3i = layer( "VIA34" )
+    m4i = layer( "METAL4" type("drawing") )
+    via4i = layer( "VIA45" )
+    m5i = layer( "METAL5" type("drawing") )
+    via5i = layer( "VIA56" )
+    m6i = layer( "METAL6" type("drawing") )
+    viadi = layer( "VIAD" )
+    mdi = layer( "MD" type("drawing") )
+;In TSMC standard mapping, datatype 1 is for dummy metal and datatype 2 is for metal slot
+; Metal Slot layers
+;
+    m1sloti = layer( "METAL1" type("slot") ) 
+    m2sloti = layer( "METAL2" type("slot") ) 
+    m3sloti = layer( "METAL3" type("slot") ) 
+    m4sloti = layer( "METAL4" type("slot") ) 
+    m5sloti = layer( "METAL5" type("slot") ) 
+    m6sloti = layer( "METAL6" type("slot") ) 
+    mdsloti = layer( "MD" type("slot") )
+    m1dmy = layer( "METAL1" type("dummy") )
+    m2dmy = layer( "METAL2" type("dummy") )
+    m3dmy = layer( "METAL3" type("dummy") )
+    m4dmy = layer( "METAL4" type("dummy") )
+    m5dmy = layer( "METAL5" type("dummy") )
+    m6dmy = layer( "METAL6" type("dummy") )
+    mddmy = layer( "MD" type("dummy") )
+    ctm2i = layer( "CTM2" )
+    ctm3i = layer( "CTM3" )
+    ctm4i = layer( "CTM4" )
+    ctm5i = layer( "CTM5" )
+
+)
+
+odi = geomOr( diffi pdiffi ndiffi )
+; metal in silicon    
+m1 = geomOr( geomAndNot( m1i m1sloti ) m1dmy )
+m2 = geomOr( geomAndNot( m2i m2sloti ) m2dmy )
+m3 = geomOr( geomAndNot( m3i m3sloti ) m3dmy )
+m4 = geomOr( geomAndNot( m4i m4sloti ) m4dmy )
+m5 = geomOr( geomAndNot( m5i m5sloti ) m5dmy )
+m6 = geomOr( geomAndNot( m6i m6sloti ) m6dmy )
+md = geomOr( geomAndNot( mdi mdsloti ) mddmy )
+    
+;Exclude the via upon CTM region
+viat = geomAndNot( via5i geomButtOrOver( via5i ctm5i ) )
+viac = geomAnd( via5i ctm5i )
+gate = geomAnd(  odi polyi )
+sd = geomAndNot( odi polyi ) 
+co_polyi = geomAnd( coi polyi )
+    
+;poly checks
+;===========
+geomConnect(
+	buttOrOver( polyi gate )
+	)
+
+; POLY thickness is 2000A
+
+processAntenna(
+	gate((gate polyi))
+	antenna( polyi )
+	ratio = polyi.perimeter*0.2/gate.area
+	drcAntenna( polyi (gate) ratio ( keep > 200 ) 
+	    "A.R.1.POLY (Poly perim*thickness / gate area) > 200" ) 
+	)
+
+;co checks
+;=========
+geomConnect( 
+	buttOrOver( gate polyi )
+	buttOrOver( co_polyi polyi )
+	)
+processAntenna(
+	gate((gate polyi))
+	antenna( co_polyi )
+	ratio = co_polyi.area/gate.area
+	drcAntenna( co_polyi (gate) ratio ( keep > 10 ) 
+	    "A.R.4.CO (contact area / gate area) > 10" )
+	)
+
+;m1 checks
+;=========
+
+geomConnect(
+	buttOrOver( gate polyi )
+	via( coi m1 polyi sd )
+	)
+;M1 thickness is 5300 A
+processAntenna(
+	gate((gate polyi))
+	antenna( m1 )
+	ratio =  m1.perimeter*0.53/gate.area 
+	diode = sd.area-0.2029
+	factor1 = (diode-abs(diode))/(2*diode)*400 ; without diode
+	factor2 = (diode+abs(diode))/(2*diode)*(sd.area*400+2200) ; with diode 
+	ant_value = factor1 + factor2 
+	drcAntenna( m1 (gate) ratio ( keep > ant_value ) 
+	    " A.R.2_A.R.3.M1 (M1 perimeter*thickness / gate area) > 400/Ratio ( wo/wi effective diode)" )
+	)
+
+;via1 checks
+;===========
+geomConnect(
+	buttOrOver( gate polyi )
+	via( coi m1 polyi sd )
+	buttOrOver( via1i m1 )
+	)
+processAntenna(
+	gate((gate polyi))
+	antenna( via1i ) 
+	ratio = via1i.area/gate.area
+	diode = sd.area-0.2029
+        factor1 = (diode-abs(diode))/(2*diode)*20 ; without diode
+	factor2 = (diode+abs(diode))/(2*diode)*(sd.area*83.33+75) ; with diode 
+	ant_value = factor1 + factor2 
+	drcAntenna( via1i (gate) ratio ( keep > ant_value )
+	    " A.R.5_A.R.6.VIA1 (VIA1 area / gate area) > 20/Ratio ( wo/wi effect diode)" )
+	)
+;m2 checks
+;=========
+
+; M2 thickness is 5300 A
+geomConnect( 
+	buttOrOver( gate polyi )
+	via( coi m1 polyi sd )
+	via( via1i m1 m2 )
+	)
+processAntenna(
+	gate((gate polyi))
+	antenna( m2 )
+	ratio =  m2.perimeter*0.53/gate.area 
+	diode = sd.area-0.2029
+	factor1 = (diode-abs(diode))/(2*diode)*400 ; without diode
+	factor2 = (diode+abs(diode))/(2*diode)*(sd.area*400+2200) ; with diode 
+	ant_value = factor1 + factor2 
+	drcAntenna( m2 (gate) ratio ( keep > ant_value ) 
+	    " A.R.2_A.R.3.M2 (M2 perimeter*thickness / gate area) > 400/Ratio ( wo/wi effective diode)" )
+	)
+
+;via2 checks
+;===========
+geomConnect( 
+	buttOrOver( gate polyi )
+	via( coi m1 polyi sd )
+	via( via1i m1 m2 )
+	buttOrOver( via2i m2 )
+	)
+processAntenna(
+	gate((gate polyi))
+	antenna( via2i ) 
+	ratio = via2i.area/gate.area
+	diode = sd.area-0.2029
+        factor1 = (diode-abs(diode))/(2*diode)*20 ; without diode
+	factor2 = (diode+abs(diode))/(2*diode)*(sd.area*83.33+75) ; with diode 
+	ant_value = factor1 + factor2 
+	drcAntenna( via2i (gate) ratio ( keep > ant_value )
+	    " A.R.5_A.R.6.VIA2 (VIA2 area / gate area) > 20/Ratio ( wo/wi effective diode)" )
+	)
+;m3 checks
+;=========
+
+; M3 thickness is 5300 A
+geomConnect( 
+	buttOrOver( gate polyi )
+	via( coi m1 polyi sd )
+	via( via1i m1 m2 )
+	via( via2i m2 m3 )
+	)
+processAntenna(
+	gate((gate polyi))
+	antenna( m3 )
+	ratio =  m3.perimeter*0.53/gate.area 
+	diode = sd.area-0.2029
+	factor1 = (diode-abs(diode))/(2*diode)*400 ; without diode
+	factor2 = (diode+abs(diode))/(2*diode)*(sd.area*400+2200) ; with diode 
+	ant_value = factor1 + factor2 
+	drcAntenna( m3 (gate) ratio ( keep > ant_value ) 
+	    " A.R.2_A.R.3.M3 (M3 perimeter*thickness / gate area) > 400/Ratio ( wo/wi effective diode)" )
+	)
+
+;via3 checks
+;===========
+geomConnect( 
+	buttOrOver( gate polyi )
+	via( coi m1 polyi sd )
+	via( via1i m1 m2 )
+	via( via2i m2 m3 )
+	buttOrOver( via3i m3 )
+	)
+processAntenna(
+	gate((gate polyi))
+	antenna( via3i ) 
+	ratio = via3i.area/gate.area
+	diode = sd.area-0.2029
+        factor1 = (diode-abs(diode))/(2*diode)*20 ; without diode
+	factor2 = (diode+abs(diode))/(2*diode)*(sd.area*83.33+75) ; with diode 
+	ant_value = factor1 + factor2 
+	drcAntenna( via3i (gate) ratio ( keep > ant_value )
+	    " A.R.5_A.R.6.VIA3 (VIA3 area / gate area) > 20/Ratio ( wo/wi effective diode)" )
+	)
+;m4 checks
+;=========
+
+; M4 thickness is 5300 A
+geomConnect( 
+	buttOrOver( gate polyi )
+	via( coi m1 polyi sd )
+	via( via1i m1 m2 )
+	via( via2i m2 m3 )
+	via( via3i m3 m4 )
+	)
+processAntenna(
+	gate((gate polyi))
+	antenna( m4 )
+	ratio =  m4.perimeter*0.53/gate.area 
+	diode = sd.area-0.2029
+	factor1 = (diode-abs(diode))/(2*diode)*400 ; without diode
+	factor2 = (diode+abs(diode))/(2*diode)*(sd.area*400+2200) ; with diode 
+	ant_value = factor1 + factor2 
+	drcAntenna( m4 (gate) ratio ( keep > ant_value ) 
+	    " A.R.2_A.R.3.M4 (M4 perimeter*thickness / gate area) > 400/Ratio ( wo/wi effective diode)" )
+	)
+
+;via4 checks
+;===========
+geomConnect( 
+	buttOrOver( gate polyi )
+	via( coi m1 polyi sd )
+	via( via1i m1 m2 )
+	via( via2i m2 m3 )
+	via( via3i m3 m4 )
+	buttOrOver( via4i m4 )
+	)
+processAntenna(
+	gate((gate polyi))
+	antenna( via4i ) 
+	ratio = via4i.area/gate.area
+	diode = sd.area-0.2029
+        factor1 = (diode-abs(diode))/(2*diode)*20 ; without diode
+	factor2 = (diode+abs(diode))/(2*diode)*(sd.area*83.33+75) ; with diode 
+	ant_value = factor1 + factor2 
+	drcAntenna( via4i (gate) ratio ( keep > ant_value )
+	    " A.R.5_A.R.6.VIA4 (VIA4 area / gate area) > 20/Ratio ( wo/wi effective diode)" )
+	)
+;m5 checks
+;=========
+
+; M5 thickness is 5300 A
+geomConnect( 
+	buttOrOver( gate polyi )
+	via( coi m1 polyi sd )
+	via( via1i m1 m2 )
+	via( via2i m2 m3 )
+	via( via3i m3 m4 )
+	via( via4i m4 m5 )
+	)
+processAntenna(
+	gate((gate polyi))
+	antenna( m5 )
+	ratio =  m5.perimeter*0.53/gate.area 
+	diode = sd.area-0.2029
+	factor1 = (diode-abs(diode))/(2*diode)*400 ; without diode
+	factor2 = (diode+abs(diode))/(2*diode)*(sd.area*400+2200) ; with diode 
+	ant_value = factor1 + factor2 
+	drcAntenna( m5 (gate) ratio ( keep > ant_value ) 
+	    " A.R.2_A.R.3.M5 (M5 perimeter*thickness / gate area) > 400/Ratio ( wo/wi effective diode)" )
+	)
+
+;via5 checks
+;===========
+geomConnect( 
+	buttOrOver( gate polyi )
+	via( coi m1 polyi sd )
+	via( via1i m1 m2 )
+	via( via2i m2 m3 )
+	via( via3i m3 m4 )
+	via( via4i m4 m5 )
+	buttOrOver( viat m5 )
+	)
+processAntenna(
+	gate((gate polyi))
+	antenna( viat ) 
+	ratio = viat.area/gate.area
+	diode = sd.area-0.2029
+        factor1 = (diode-abs(diode))/(2*diode)*20 ; without diode
+	factor2 = (diode+abs(diode))/(2*diode)*(sd.area*83.33+75) ; with diode 
+	ant_value = factor1 + factor2 
+	drcAntenna( viat (gate) ratio ( keep > ant_value )
+	    " A.R.5_A.R.6.VIA5 (VIA5 area / gate area) > 20/Ratio ( wo/wi effective diode)" )
+	)
+
+;m6 checks
+;=========
+
+geomConnect( 
+	buttOrOver( gate polyi )
+	via( coi m1 polyi sd )
+	via( via1i m1 m2 )
+	via( via2i m2 m3 )
+	via( via3i m3 m4 )
+	via( via4i m4 m5 )
+	via( viat m5 m6 )
+	via( viac m6 ctm5i )
+	)
+
+if( avSwitch( "THICK_TOP_METAL" ) then  
+; M6 thickness is 20K A
+processAntenna(
+	gate((gate polyi))
+	antenna( m6 )
+	ratio =  m6.perimeter*2/gate.area 
+	diode = sd.area-0.2029
+	factor1 = (diode-abs(diode))/(2*diode)*400 ; without diode
+	factor2 = (diode+abs(diode))/(2*diode)*(sd.area*8000+30000) ; with diode 
+	ant_value = factor1 + factor2 
+	drcAntenna( m6 (gate) ratio ( keep > ant_value ) 
+	    " A.R.2_A.R.3.M6.THICK (M6 perimeter*thickness / gate area) > 400/Ratio ( wo/wi effective diode)" )
+	)
+else
+; M6 thickness is 9900K A
+processAntenna(
+	gate((gate polyi))
+	antenna( m6 )
+	ratio =  m6.perimeter*0.99/gate.area 
+	diode = sd.area-0.2029
+	factor1 = (diode-abs(diode))/(2*diode)*400 ; without diode
+	factor2 = (diode+abs(diode))/(2*diode)*(sd.area*8000+30000) ; with diode 
+	ant_value = factor1 + factor2 
+	drcAntenna( m6 (gate) ratio ( keep > ant_value ) 
+	    " A.R.2_A.R.3.M6 (M6 perimeter*thickness / gate area) > 400/Ratio ( wo/wi effective diode)" )
+	)
+)
+
+;viad checks
+;===========
+geomConnect( 
+	buttOrOver( gate polyi )
+	via( coi m1 polyi sd )
+	via( via1i m1 m2 )
+	via( via2i m2 m3 )
+	via( via3i m3 m4 )
+	via( via4i m4 m5 )
+	via( viat m5 m6 )
+	via( viac m6 ctm5i )
+	buttOrOver( viadi m6 )
+	)
+processAntenna(
+	gate((gate polyi))
+	antenna( viadi ) 
+	ratio = viadi.area/gate.area
+	diode = sd.area-0.2029
+	factor1 = (diode-abs(diode))/(2*diode)*20 ; without diode
+	factor2 = (diode+abs(diode))/(2*diode)*(sd.area*83.33+75) ; with diode
+	ant_value = factor1 + factor2
+	drcAntenna( viadi (gate) ratio ( keep > ant_value )
+	    " A.R.5_A.R.6.VIAD (VIAD area / gate area) > 20/Ratio ( wo/wi effective diode)" )
+	)
+
+;md checks
+;=========
+; MD thickness is 9900 A
+geomConnect( 
+	buttOrOver( gate polyi )
+	via( coi m1 polyi sd )
+	via( via1i m1 m2 )
+	via( via2i m2 m3 )
+	via( via3i m3 m4 )
+	via( via4i m4 m5 )
+	via( viat m5 m6 )
+	via( viac m6 ctm5i )
+	via( viadi m6 md )
+	)
+processAntenna(
+	gate((gate polyi))
+	antenna( md )
+	ratio =  md.perimeter*0.99/gate.area 
+	diode = sd.area-0.2029
+	factor1 = (diode-abs(diode))/(2*diode)*400 ; without diode
+	factor2 = (diode+abs(diode))/(2*diode)*(sd.area*8000+30000) ; with diode 
+	ant_value = factor1 + factor2 
+	drcAntenna( md (gate) ratio ( keep > ant_value ) 
+	    " A.R.2_A.R.3.MD (MD perimeter*thickness / gate area) > 400/Ratio ( wo/wi effective diode)" )
+	)
+
+)

@@ -1,0 +1,26 @@
+; ASSURA DRC RUN-SPECIFIC FILE (RSF)
+;
+;********************************************************
+
+
+avParameters(
+  ?inputLayout ( "gds2" "<GDSFileName>" )
+
+;   ?inputLayout ( "df2" "<LibraryName>" )
+;   ?viewName "layout"
+
+   ?cellName "<TopCellName>"
+   ?runName "<RunName>"
+   ?rulesFile "<RuleFileName>"
+;  ?workingDirectory "<WorkDir>"
+
+   ?avrpt t       
+   ?overwrite t
+   ?flagNon45 t
+   ?userUnits "micron"
+   ?resolution 0.001 
+;  ?joinPins t
+
+;?set "GridCheck"		; turn on to check offgrid 
+
+)

@@ -1,0 +1,93 @@
+
+
+			README File for Assura RCX
+		     ================================
+
+INTRODUCTION:
+
+
+     Following are the descriptions for those files related to Assura RCX:
+
+
+  RCX.README        - RCX instructions (this file)
+  caps2d            - binary file output from capgen -S run
+  extract.rul       - Device extraction file
+  compare.rul       - LVS compare rule file
+  rcx.rsf           - sample RSF file for running RCX
+  lvsfile.rsf       - sample RSF file to create lvsfile
+  lvs.rsf           - sample RSF 
+  p2lvsfile         - layer mapping file for procfile 
+  procfile          - Process description file  
+  capgen_cmd_6lm    - script for capagen -C
+
+
+     Following files are RCX reference and information files:
+
+  cap_coeff.dat
+  paxfile_coeff
+  rcxfs.dat
+  RCXdspfINIT
+  RCXspiceINIT
+
+
+
+USER GUIDE:
+
+      Following is a brief method to create a spice netlist using Assura RCX.
+  For more information,please reference to the "Physical Verification Developer Guide" 
+  or contact your Cadence application consultant.
+
+     
+  Step 1: create a lvsfile file for capgen input
+
+
+         % assura lvsfile.rsf  
+
+
+         Note: Set ?inputLayout, ?cellName and ?viewName to point to data.
+
+
+  Step 2: execute the following command
+
+
+          % capgen -C -lvs lvsfile -p2lvs p2lvsfile -cap_unit value -M model_name -length_units meters -p poly,paxgate,gate_ox .
+
+
+          Note:
+          1.  -cap_unit options
+
+                  This option specifies designed capacitor units. Depending on 
+              the extract.rul file here,you should set the value to "1".
+
+
+          2.  -M optins
+
+                  Use the specified model name for RCX parasitic capacitors instead 
+              of the default "cmodel" model name.
+      
+          3.  -length_units microns | meters options 
+
+                  This option specifies MOSFET and canonical resistor LW units. Depending on
+              the extract.rul file here,you should set the unit to "meters".
+
+          4.  -p poly_layer_name,gate_layer_name,diffusion_layer_name
+
+                  Use this option to exclude MOSFET gate area and perimeter capacitance to 
+              substrate layers form Assura RCX calculation and extraction.
+               
+   Step 3:  run Assura LVS
+
+ 
+          % assura lvs.rsf
+
+         Note: Set ?inputLayout, ?cellName ,schematic netlist and ?viewName to point to data.
+
+
+   Step 4:  run Assura RCX
+
+
+          % assura rcx.rsf
+
+         Note: Set ?inputLayout, ?cellName ,?capGround and others parameters to their proper settings. 
+
+

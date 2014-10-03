@@ -1,0 +1,21 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Rule Set File generated/modified by Assura Code on Mar 30 23:31:46 2004
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+ruleSet( "drc"
+     (DrcRules             "./drc/drc.rul" )
+)
+
+ruleSet( "LVS"
+     (LvsExtractRules      "./lvs/extract.rul" )
+     (LvsCompareRules      "./lvs/compare.rul" )
+     (LvsBindingFile       "./lvs/bind.rul" )
+)
+
+ruleSet( "RCX"
+     (LvsExtractRules      "./rcx/extract.rul" )
+     (LvsCompareRules      "./rcx/compare.rul" )
+     (LvsBindingFile       "./rcx/bind.rul" )
+     (RcxSetupDir          "./rcx" )
+)
+

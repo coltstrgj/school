@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      t370
+HostName                       linux1.engr.colostate.edu
+ProcessIdentifier              6268
+ProcessCreationTime_UTC        1253563227
+ProcessCreationTime_Readable   Mon Sep 21 14:00:27 2009 MDT
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /net/sunstore/data/students/UNGRAD/ECE/pcoman/home/ece_331_labs/tsmc18rf/dioden/symbol/symbol.oa.cdslck.dirlck
+TimeEditLocked                 Mon Sep 21 14:30:34 2009 MDT

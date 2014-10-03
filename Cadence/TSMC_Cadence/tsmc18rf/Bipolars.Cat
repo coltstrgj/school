@@ -1,0 +1,5 @@
+TDMCHECKPOINT="1.0"
+keepEmptyCategory type="unknown"
+tsmc18rf/npn type="cell"
+tsmc18rf/vpnp type="cell"
+tsmc18rf/vpnp3 type="cell"

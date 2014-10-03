@@ -1,0 +1,10 @@
+;;; binding file for CDL netlist only
+c ND(MOS)             nmos3v(MOS)
+c PD(MOS)             pmos3v(MOS)
+c M1(RES)	      rm1(RES)
+c M2(RES)	      rm2(RES)
+c M3(RES)	      rm3(RES)
+c M4(RES)	      rm4(RES)
+c M5(RES)	      rm5(RES)
+c MT(RES)	      rmt(RES)
+

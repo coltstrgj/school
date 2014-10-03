@@ -1,0 +1,4 @@
+#!/bin/bash
+cd Cadence/TSMC_Cadence
+source cust_ic613_mmsim.cshrc
+

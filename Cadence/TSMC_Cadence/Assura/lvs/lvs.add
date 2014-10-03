@@ -1,0 +1,116 @@
+***************************************
+
+.SUBCKT rnpo1rpo_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rppolyhri_rf PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT moscap_rf33 PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT pmos_rf33_nw D G S B
+.ENDS
+***************************************
+.SUBCKT rpod_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rppo1rpo_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rppolyhri_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rppoly_rf PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rppolywo_rf PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT mimcap_shield PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT mimcap_wos PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT nmoscap PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT rnodw_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT nmoscap_33 PLUS MINUS
+.ENDS
+***************************************
+.SUBCKT lincap PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rpodw_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT spiral_s2_sym_ct PLUS MINUS BULK CTAP
+.ENDS
+***************************************
+.SUBCKT spiral_s3_sym_ct PLUS MINUS BULK CTAP
+.ENDS
+***************************************
+.SUBCKT spiral_s2_sym PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_s3_sym PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT xjvar_w40 PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT rnpo1w_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rppo1w_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnpo1_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rnodrpo_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rppo1_dis PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT rpodrpo_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT xjvar_nr36 PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT nmos_rf D G S B
+.ENDS
+***************************************
+.SUBCKT spiral_s2_std PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT spiral_s3_std PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT pmos_rf D G S B
+.ENDS
+***************************************
+.SUBCKT rnwod_m PLUS MINUS B
+.ENDS
+***************************************
+.SUBCKT pmos_rf_nw D G S B
+.ENDS
+***************************************
+.SUBCKT nmos_rf33 D G S B
+.ENDS
+***************************************
+.SUBCKT moscap_rf PLUS MINUS BULK
+.ENDS
+***************************************
+.SUBCKT pmos_rf33 D G S B
+.ENDS
+***************************************
+.SUBCKT rnod_m PLUS MINUS B
+.ENDS
+***************************************

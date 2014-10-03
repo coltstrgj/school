@@ -1,0 +1,6 @@
+TDMCHECKPOINT="1.0"
+tsmc18rf/jvar type="cell"
+tsmc18rf/mos_var type="cell"
+tsmc18rf/mos_var33 type="cell"
+tsmc18rf/mos_var_b type="cell"
+tsmc18rf/mos_var_b3 type="cell"
