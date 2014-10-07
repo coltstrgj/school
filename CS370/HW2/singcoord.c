@@ -3,7 +3,7 @@
 #include <sys/wait.h>
 #include <stdlib.h>
 int coordinate(char* divisor, char* dividend){
-    int cpid, w;//TODO create a 2d array that stores PID Pipe, and return
+    pid_t cpid, w;
     int status;
     cpid=fork();
     if (cpid == -1) {
@@ -12,10 +12,14 @@ int coordinate(char* divisor, char* dividend){
     }
     if(cpid==0){
         //is child
-        if (-1 == execl("./Darien_Colt_Checker.out", "Darien_Colt_Checker.out", divisor, dividend, NULL)){
-            perror("execlp() failed");//this means it is broken, because it should never reach this code unless it fails to execl
+        //printf("child launched %i\n", getpid());
+        if (-1 == execlp("./Darien_Colt_Checker.out", "Darien_Colt_Checker.out", divisor, dividend, NULL)){
+            perror("execlp() failed");//this means it is broken
             return 0;
+        }else{
+            printf("it worked and somehow came back?");//believe it or not I had this run several times. I think that normal physics dont apply to me.
         }
+        return 1;
     }else{
         //is parent
         printf("Coordinator: forked process with ID: %i\n", cpid);
@@ -34,11 +38,12 @@ int main(int argc, char* argv[]){
         printf("Bad input:\nUsage: 'coordinator divisor dividend dividend dividend dividend\n");
         return 0;
     }
-    //the following loop calls the method above and creates child processes
-//  for(int i=0; i<4; i++){
-//      coordinate(argv[1],argv[i+2]); 
-//  }
-
-        coordinate(argv[1],argv[2]); 
-}
-
+    coordinate(argv[1],argv[2]); 
+    coordinate(argv[1],argv[3]); 
+    coordinate(argv[1],argv[4]); 
+    coordinate(argv[1],argv[5]); 
+    printf("Coordinator: exiting.\n");    
+    /*for(int i=0; i<4; i++){
+        coordinate(argv[1],argv[i+2]); 
+    }*/
+} 
