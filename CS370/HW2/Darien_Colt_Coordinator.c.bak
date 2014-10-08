@@ -57,7 +57,7 @@ int main(int argc, char* argv[]){
 
             char shm_name[BUFSIZ];
             snprintf(shm_name, sizeof(shm_name), "%i", shmid);
-            int nbytes = write(fildes[1], shm_name, sizeof(shm_name));    /* Write data on pipe */
+            int nbytes = write(fildes[1], shm_name, 7);    /* Write data on pipe */
             close(fildes[1]);                           /* Child will see EOF */
             printf("Coordinator: wrote shm ID %i to pipe (%i bytes)\n", shmid, nbytes);
 
