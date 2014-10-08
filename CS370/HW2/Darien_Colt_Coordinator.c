@@ -68,6 +68,7 @@ int main(int argc, char* argv[]){
     for(int i=0; i<4; i++){
         int w, status;
         ////////////wait for the cpid stored in the array
+        printf("Coordinator: waiting on child process ID %i\n", child_array[i][0]);
         w = waitpid(child_array[i][0], &status, WUNTRACED | WCONTINUED);
         if (w == -1) {
             perror("waitpid");
