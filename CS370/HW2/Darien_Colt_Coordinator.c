@@ -56,10 +56,10 @@ int main(int argc, char* argv[]){
             //actually creates the pipe
 
             char shm_name[BUFSIZ];
-            snprintf(shm_name, sizeof(shm_name), "%i %i", shmid, i);
+            snprintf(shm_name, sizeof(shm_name), "%i", shmid);
             int nbytes = write(fildes[1], shm_name, 7);    /* Write data on pipe */
             close(fildes[1]);                           /* Child will see EOF */
-            printf("Coordinator: wrote shm ID %i to pipe (%i bytes)\n", shmid,nbytes);
+            printf("Coordinator: wrote shm ID %i to pipe (%i bytes)\n", shmid, nbytes);
 
         }//end of parent
 
@@ -76,7 +76,9 @@ int main(int argc, char* argv[]){
 
         char *ans=shmat(child_array[i][1],NULL , 0);
         int ans_int=atoi(ans);
+        shmctl(child_array[i][1], IPC_RMID, NULL);
         char divis[BUFSIZ];
+        //sets wheter or not the sentence should say not
         if(ans_int){
             snprintf(divis, sizeof(divis), "is divisible");
         }else{
