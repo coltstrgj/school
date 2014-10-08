@@ -6,10 +6,10 @@ CXXFLAGS=-std=c11 -Wall -Wextra -pedantic
 all: Darien_Colt_Coordinator.out Darien_Colt_Checker.out 
 
 Darien_Colt_Checker.out: Darien_Colt_Checker.c
-	gcc $(CXXFLAGS) -o Darien_Colt_Checker.out Darien_Colt_Checker.c
+	echo $(Print) && gcc $(CXXFLAGS) -o Darien_Colt_Checker.out Darien_Colt_Checker.c #--------------------
 
 Darien_Colt_Coordinator.out: Darien_Colt_Coordinator.c 
-	gcc $(CXXFLAGS) -o  Darien_Colt_Coordinator.out Darien_Colt_Coordinator.c
+	echo $(Print) && gcc $(CXXFLAGS) -o  Darien_Colt_Coordinator.out Darien_Colt_Coordinator.c #--------------------
 
 clean:
 	-rm -f *.out
