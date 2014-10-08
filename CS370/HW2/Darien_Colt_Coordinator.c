@@ -39,6 +39,7 @@ int coordinate(char* divisor, char* dividend){
     }else{//is parent
         //the parent needs to create shared memory and send the info to the child
         printf("Coordinator: forked process with ID: %i\n", cpid);
+        //////////create the shared memory segment
         key_t key; /* key to be passed to shmget() */ 
         int shmflg; /* shmflg to be passed to shmget() */ 
         int shmid; /* return value from shmget() */ 
