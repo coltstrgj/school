@@ -23,12 +23,10 @@ int main(int argc, char* argv[]){
     const int BSIZE = 100;
     char buf[BSIZE];
     ssize_t nbytes;
-    printf("first 2\n");
     nbytes = read(atoi(argv[1]), buf, 100);   /* Get data from pipe */
     /* At this point, a further read would see end of file ... */
-    //close(argv[1]);                       /* Finished with pipe */
-    printf("last\n");
+    close(atoi(argv[1]));                       /* Finished with pipe */
     printf("Checker process [%i]: got %s\n", getpid(), buf);
-
     return 1;
+//    exit(EXIT_SUCCESS);
 } 

@@ -28,12 +28,8 @@ int coordinate(char* divisor, char* dividend){
     if(cpid==0){
         /* Child - reads from pipe */
         close(fildes[1]);/* Write end is unused */
-        //nbytes = read(fildes[0], buf, BSIZE);   /* Get data from pipe */
-        /* At this point, a further read would see end of file ... */
-        //exit(EXIT_SUCCESS);
         char pipeName[BUFSIZ];
         snprintf(pipeName, sizeof(pipeName), "%i", fildes[0]);
-        printf("this is the pipename %s\n",pipeName);
         if (-1 == execl("./Darien_Colt_Checker.out", "Darien_Colt_Checker.out", pipeName, divisor, dividend, NULL)){
             perror("execlp() failed");//this means it is broken, because it should never reach this code unless it fails to execl
             return 0;
@@ -41,9 +37,9 @@ int coordinate(char* divisor, char* dividend){
     }else{//is parent
         //the parent needs to create shared memory and send the info to the child
         printf("Coordinator: forked process with ID: %i\n", cpid);
-        //default:  /* Parent - writes to pipe */
+        /* Parent - writes to pipe */
         close(fildes[0]);                       /* Read end is unused */
-        write(fildes[1], "Hello world\n", 12);  /* Write data on pipe */
+        write(fildes[1], "Hello world", 12);  /* Write data on pipe */
         close(fildes[1]);                       /* Child will see EOF */
         //    exit(EXIT_SUCCESS);
         //printf("Coordinator: waiting for process [%i]\n", cpid);   

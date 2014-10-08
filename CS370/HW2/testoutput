@@ -1,7 +1,4 @@
-Checker process [11251]: Starting.
-first 2
-last
-Checker process [11251]: got Hello world
-ÿ
-Coordinator: forked process with ID: 11251
-Coordinator: child process 11251 returned 1.
+Checker process [14278]: Starting.
+Checker process [14278]: got Hello world
+Coordinator: forked process with ID: 14278
+Coordinator: child process 14278 returned 1.
