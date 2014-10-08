@@ -26,7 +26,8 @@ int main(int argc, char* argv[]){
     nbytes = read(atoi(argv[1]), buf, 100);   /* Get data from pipe */
     /* At this point, a further read would see end of file ... */
     close(atoi(argv[1]));                       /* Finished with pipe */
-    printf("Checker process [%i]: got %s\n", getpid(), buf);
+    //printf("Checker process [%i]: got %s\n", getpid(), buf);
+    printf("Checker process [%i]: read %i bytes containing shm ID %s\n", getpid(), nbytes, buf);
     return 1;
 //    exit(EXIT_SUCCESS);
 } 
