@@ -1,24 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/shm.h>
 
+int divide(int divisor, int dividend){
+    if((dividend % divisor)==0){
+        //was divisable (true)
+        printf("Checker process [%i]: %i *IS* divisable by %i.\n", getpid(), dividend, divisor);
+        return 1;
+    }else{
+        printf("Checker process [%i]: %i *IS NOT* divisable by %i.\n", getpid(), dividend, divisor); 
+        return 0;
+    }
 
-//int div(int divisor, int dividend){
-//  if((dividend % divisor)==0){
-//      //was divisable (true)
-//      printf("Checker process [%i]: %i *IS* divisable by %i.\n", getpid(), dividend, divisor);
-//      printf("Checker process [%i]: Returning 1.\n", getpid());
-//      return 1;
-//  }else{
-//      printf("Checker process [%i]: %i *IS NOT* divisable by %i.\n", getpid(), dividend, divisor); 
-//      printf("Checker process [%i]: Returning 0.\n", getpid());
-//      return 0;
-//  }
-
-//}
+}
 int main(int argc, char* argv[]){
     printf("Checker process [%i]: Starting.\n", getpid());
-    //return div(atoi(argv[1]), atoi(argv[2]), atoi(argv[3]));
     //case 0:  /* Child - reads from pipe */
     const int BSIZE = 100;
     char buf[BSIZE];
@@ -28,30 +25,25 @@ int main(int argc, char* argv[]){
     close(atoi(argv[1]));                       /* Finished with pipe */
     //printf("Checker process [%i]: got %s\n", getpid(), buf);
     int shmid=(atoi(buf));
-    printf("                                                                %i\n", shmid);
-    printf("Checker process [%i]: read %i bytes containing shm ID %i\n", getpid(), nbytes, buf);
+    printf("Checker process [%i]: read %i bytes containing shm ID %s\n", getpid(), nbytes, buf);
+    char *ans=shmat(shmid,NULL , 0);
+    int is_divis=divide(atoi(argv[2]), atoi(argv[3]));
+    snprintf(ans, sizeof(ans), "%i", is_divis);
+    //do I detach?
+    printf("Checker process [%i]: wrote result (%i) to shared memory.\n", getpid(), is_divis);
     return 1;
     //    exit(EXIT_SUCCESS);
 }
-//--Checker process [25498]: starting.
-//
-//TODO Checker process [25498]: read 4 bytes containing shm ID 4128846
-//
-//TODO Checker process [25498]: 49 *IS NOT* divisible by 3.
-//
-//TODO Checker process [25498]: wrote result (0) to shared memory.
-
-
 //
 // shm-client - client program to demonstrate shared memory.
 ///
 
-//nclude <sys/types.h>
-//nclude <sys/ipc.h>
-//nclude <sys/shm.h>
-//nclude <stdio.h>
+//include <sys/types.h>
+//include <sys/ipc.h>
+//include <sys/shm.h>
+//include <stdio.h>
 
-//efine SHMSZ     27
+//define SHMSZ     27
 
 //  main()
 //  {
