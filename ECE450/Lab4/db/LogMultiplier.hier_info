@@ -1,0 +1,132 @@
+|LogMultiplier
+seven_seg[0] <= conversion:comb_13.port0
+seven_seg[1] <= conversion:comb_13.port0
+seven_seg[2] <= conversion:comb_13.port0
+seven_seg[3] <= conversion:comb_13.port0
+seven_seg[4] <= conversion:comb_13.port0
+seven_seg[5] <= conversion:comb_13.port0
+seven_seg[6] <= conversion:comb_13.port0
+seven_seg[7] <= conversion:comb_14.port0
+seven_seg[8] <= conversion:comb_14.port0
+seven_seg[9] <= conversion:comb_14.port0
+seven_seg[10] <= conversion:comb_14.port0
+seven_seg[11] <= conversion:comb_14.port0
+seven_seg[12] <= conversion:comb_14.port0
+seven_seg[13] <= conversion:comb_14.port0
+overflow <= log_add:comb_3.port0
+ledDebug[0] <= product[0].DB_MAX_OUTPUT_PORT_TYPE
+ledDebug[1] <= product[1].DB_MAX_OUTPUT_PORT_TYPE
+ledDebug[2] <= product[2].DB_MAX_OUTPUT_PORT_TYPE
+ledDebug[3] <= product[3].DB_MAX_OUTPUT_PORT_TYPE
+ledDebug[4] <= product[4].DB_MAX_OUTPUT_PORT_TYPE
+ledDebug[5] <= product[5].DB_MAX_OUTPUT_PORT_TYPE
+ledDebug[6] <= product[6].DB_MAX_OUTPUT_PORT_TYPE
+ledDebug[7] <= product[7].DB_MAX_OUTPUT_PORT_TYPE
+ain[0] => ain[0].IN1
+ain[1] => ain[1].IN1
+ain[2] => ain[2].IN1
+ain[3] => ain[3].IN1
+ain[4] => ain[4].IN1
+bin[0] => bin[0].IN1
+bin[1] => bin[1].IN1
+bin[2] => bin[2].IN1
+bin[3] => bin[3].IN1
+bin[4] => bin[4].IN1
+
+
+|LogMultiplier|log_add:comb_3
+product[0] <= convert_loginv:comb_7.port0
+product[1] <= convert_loginv:comb_7.port0
+product[2] <= convert_loginv:comb_7.port0
+product[3] <= convert_loginv:comb_7.port0
+product[4] <= convert_loginv:comb_7.port0
+product[5] <= convert_loginv:comb_7.port0
+product[6] <= convert_loginv:comb_7.port0
+product[7] <= convert_loginv:comb_7.port0
+product[8] <= convert_loginv:comb_7.port0
+ain[0] => ain[0].IN1
+ain[1] => ain[1].IN1
+ain[2] => ain[2].IN1
+ain[3] => ain[3].IN1
+ain[4] => ain[4].IN1
+bin[0] => bin[0].IN1
+bin[1] => bin[1].IN1
+bin[2] => bin[2].IN1
+bin[3] => bin[3].IN1
+bin[4] => bin[4].IN1
+
+
+|LogMultiplier|log_add:comb_3|convert_log:comb_3
+log[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+log[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+log[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+log[3] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+log[4] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+binaryin[0] => Decoder0.IN4
+binaryin[1] => Decoder0.IN3
+binaryin[2] => Decoder0.IN2
+binaryin[3] => Decoder0.IN1
+binaryin[4] => Decoder0.IN0
+
+
+|LogMultiplier|log_add:comb_3|convert_log:comb_4
+log[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+log[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+log[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+log[3] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+log[4] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+binaryin[0] => Decoder0.IN4
+binaryin[1] => Decoder0.IN3
+binaryin[2] => Decoder0.IN2
+binaryin[3] => Decoder0.IN1
+binaryin[4] => Decoder0.IN0
+
+
+|LogMultiplier|log_add:comb_3|convert_loginv:comb_7
+binaryout[0] <= Ram0.DATAOUT
+binaryout[1] <= Ram0.DATAOUT1
+binaryout[2] <= Ram0.DATAOUT2
+binaryout[3] <= Ram0.DATAOUT3
+binaryout[4] <= Ram0.DATAOUT4
+binaryout[5] <= Ram0.DATAOUT5
+binaryout[6] <= Ram0.DATAOUT6
+binaryout[7] <= Ram0.DATAOUT7
+binaryout[8] <= Ram0.DATAOUT8
+log[0] => Ram0.RADDR
+log[1] => Ram0.RADDR1
+log[2] => Ram0.RADDR2
+log[3] => Ram0.RADDR3
+log[4] => Ram0.RADDR4
+log[5] => Ram0.RADDR5
+
+
+|LogMultiplier|conversion:comb_13
+seven_seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+binaryout[0] => Decoder0.IN4
+binaryout[1] => Decoder0.IN3
+binaryout[2] => Decoder0.IN2
+binaryout[3] => Decoder0.IN1
+binaryout[4] => Decoder0.IN0
+
+
+|LogMultiplier|conversion:comb_14
+seven_seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+binaryout[0] => Decoder0.IN4
+binaryout[1] => Decoder0.IN3
+binaryout[2] => Decoder0.IN2
+binaryout[3] => Decoder0.IN1
+binaryout[4] => Decoder0.IN0
+
+

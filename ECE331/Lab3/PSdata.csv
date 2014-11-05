@@ -1,0 +1,36 @@
+'10/24/2014  2:20 PM  N-Channel MOSFET I/V Curves: Outer Loop = VGS, Inner Loop = VDS'
+'Test Parameter Name ', 'Test Parameter Value'
+'Outer Loop Current Limit', '1.000000E-2'
+'Inner Loop Current Limit', '1.000000E-1'
+'Outer Loop Voltage Command', 'Outer Loop Actual Voltage', 'Outer Loop Current', 'Inner Loop Voltage Command', 'Inner Loop Actual Voltage', 'Inner Loop Current'
+0.000000, -0.004950, 0.001454, 3.000000, 3.001890, -0.001292
+'10/24/2014  2:20 PM  N-Channel MOSFET I/V Curves: Outer Loop = VGS, Inner Loop = VDS'
+'Test Parameter Name ', 'Test Parameter Value'
+'Outer Loop Current Limit', '1.000000E-2'
+'Inner Loop Current Limit', '1.000000E-1'
+'Outer Loop Voltage Command', 'Outer Loop Actual Voltage', 'Outer Loop Current', 'Inner Loop Voltage Command', 'Inner Loop Actual Voltage', 'Inner Loop Current'
+1.000000, 0.993643, 0.001697, 3.000000, 3.001794, -0.001253
+'10/24/2014  2:20 PM  N-Channel MOSFET I/V Curves: Outer Loop = VGS, Inner Loop = VDS'
+'Test Parameter Name ', 'Test Parameter Value'
+'Outer Loop Current Limit', '1.000000E-2'
+'Inner Loop Current Limit', '1.000000E-1'
+'Outer Loop Voltage Command', 'Outer Loop Actual Voltage', 'Outer Loop Current', 'Inner Loop Voltage Command', 'Inner Loop Actual Voltage', 'Inner Loop Current'
+2.000000, 1.992701, 0.001740, 3.000000, 3.001775, -0.000748
+'10/24/2014  2:20 PM  N-Channel MOSFET I/V Curves: Outer Loop = VGS, Inner Loop = VDS'
+'Test Parameter Name ', 'Test Parameter Value'
+'Outer Loop Current Limit', '1.000000E-2'
+'Inner Loop Current Limit', '1.000000E-1'
+'Outer Loop Voltage Command', 'Outer Loop Actual Voltage', 'Outer Loop Current', 'Inner Loop Voltage Command', 'Inner Loop Actual Voltage', 'Inner Loop Current'
+3.000000, 2.992162, 0.001868, 3.000000, 3.001775, 0.000263
+'10/24/2014  2:20 PM  N-Channel MOSFET I/V Curves: Outer Loop = VGS, Inner Loop = VDS'
+'Test Parameter Name ', 'Test Parameter Value'
+'Outer Loop Current Limit', '1.000000E-2'
+'Inner Loop Current Limit', '1.000000E-1'
+'Outer Loop Voltage Command', 'Outer Loop Actual Voltage', 'Outer Loop Current', 'Inner Loop Voltage Command', 'Inner Loop Actual Voltage', 'Inner Loop Current'
+4.000000, 3.991211, 0.001962, 3.000000, 3.001582, 0.001662
+'10/24/2014  2:20 PM  N-Channel MOSFET I/V Curves: Outer Loop = VGS, Inner Loop = VDS'
+'Test Parameter Name ', 'Test Parameter Value'
+'Outer Loop Current Limit', '1.000000E-2'
+'Inner Loop Current Limit', '1.000000E-1'
+'Outer Loop Voltage Command', 'Outer Loop Actual Voltage', 'Outer Loop Current', 'Inner Loop Voltage Command', 'Inner Loop Actual Voltage', 'Inner Loop Current'
+5.000000, 4.989943, 0.002155, 3.000000, 3.002140, 0.003251

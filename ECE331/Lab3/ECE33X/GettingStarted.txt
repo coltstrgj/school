@@ -1,0 +1,35 @@
+Getting Started:
+
+- Copy the ECE33x directory tree from (wherever it is) to your U: drive.
+- Start Labview
+- Select "File->Open" 
+- Browse to "ECE33x/Labview/ECE33x_Library/ECE33x" and select "ECE33x VI Tree.vi". It should open without errors or warnings. You should see a "front panel" with a black triangle.
+- Press Ctrl-E (or select "Window->Show Block Diagram"). You should see a white screen with a lot of icons. (Note: The "ECE33x VI Tree.vi" VI is not meant to be run. The "broken" Run arrow at top left is normal.)
+- Be sure Context Help is on. "Help->Show Context Help" should have a checkmark next to it.
+
+
+
+To use one of the Virtual Instruments (VIs) on "ECE33x VI Tree.vi":
+
+- Right-click on the VI you want to use and select "Open Front Panel". The VI's front panel should open without errors or warnings.
+- Fill the in the dialog boxes as needed, especially the "VISA resource" (or similiar) entry box. The "VISA resource" box needs to have a statement of the form "GPIB::7" showing. (Important: Replace 7 with the specific GPIB address of your test equipment.)
+- Run the VI by pressing the white Run arrow on the top left of the VI's front panel. Most VI's will stop on their own. If they don't, look for a "Stop" button on the front panel (NOT the stop-sign icon near the Run arrow! In general, you shouldn't need to use the stop-sign icon with the class-provided VI's. Let the VI's run to completion on their own.)
+
+Note on "VISA resource": After you enter the correct address for your particular equipment, you can make it the default by right-clicking on the dialog box and selecting "Data Operations->Make Current Value Default". Then save the VI.
+
+
+
+To build your own Labview Virtual Instrument (VI) using the ECE33x library:
+
+- Start Labview. 
+- Select "File->New VI". A blank VI window pair should appear (front panel and block diagram).
+- Open "ECE33x VI Tree.vi" (if it isn't already open), as explained in "Getting Started".
+- To use one of the VI's as a starting point, open its block diagram, select all (Edit->Select All), then copy and paste it into your new VI's block diagram. Then modify it as necessary. (This is preferable to using the "File->Save As" method, as that can sometimes cause issues if the VI is part of a library.)
+- To add one of the VI's to your new VI, just copy and paste it.
+- To access similiar VI's, such as other Multimeter control VI's, right-click on one of the VI's for that instrument and select "ECE33x". That should expand to a series of palettes forming a whole tree of other options. Note that most of the useful functions will be under "Examples" and "Public". Also note that the contents of "ECE33x" will change depending on which VI you right-clicked on. Since most of the palette trees start with the same subpalettes, this might not be immediately obvious.
+
+Note: DO NOT use the instrument driver VI's shown in the LabView toolbox (instr.lib) menus unless otherwise instructed. Use only the instrument drivers accessed through "ECE33x VI Tree.vi". These are not only specific to the ECE lab instruments, but as they are on your U: drive they follow you. They can't be corrupted by the person who used the computer before you. Note also that if you mix Labview's instr.lib drivers with the ECE33x provided drivers you may run into cross-linking problems (see note below).
+
+Note: Cross-linking: Labview retains VI's in memory, potentially even after you have "closed" them. It also cannot handle VI's with the same name being loaded at the same time, even if they come from different directories (unless they are associated with a library). Since Labview prefers to use VI's it already has in memory whenever it can, there can be conflicts when opening another VI that has subVI's with the same names as VI's already in memory. If you see warnings of the sort "VI expected to be here was loaded from there" when you open a VI, try exiting Labview WITHOUT SAVING CHANGES, restarting Labview, and then open the VI. (If you were to save the changes accidentally, the VI's and subVI's would become cross-linked, and it would rapidly become difficult to determine which subVI changes would inadvertently affect which VI's. If it works at all.) 
+
+Note: If you make your own complicated VI's with subVI's, consider looking into using a Labview Project and creating your own library of subVI's. Unfortunately, it appears that once you start putting VI's in a library it becomes very cumbersome to move or rename them without causing problems. Since the ECE33x supplied VI's are generally part of the ECE33x library (to prevent conflicts each other and with copies that you might make), don't move them. In addition, be very cautious about adding VI's to your library that might already be part of another library. For now, stick to adding only VI's that you create yourself.

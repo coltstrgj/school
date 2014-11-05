@@ -1,0 +1,17 @@
+[ProjectWorkspace]
+ptn_Child1=Frames
+[ProjectWorkspace.Frames]
+ptn_Child1=ChildFrames
+[ProjectWorkspace.Frames.ChildFrames]
+ptn_Child1=Document-0
+[ProjectWorkspace.Frames.ChildFrames.Document-0]
+ptn_Child1=ViewFrame-0
+[ProjectWorkspace.Frames.ChildFrames.Document-0.ViewFrame-0]
+DocPathName=c:/altera/91sp2/quartus/common/advisors/oa_productivity_table.oaw
+DocumentCLSID={5bf23940-a7d4-415b-9daa-f1a0a8ec6577}
+IsChildFrameDetached=False
+IsActiveChildFrame=True
+ptn_Child1=StateMap
+[ProjectWorkspace.Frames.ChildFrames.Document-0.ViewFrame-0.StateMap]
+AFC_CMP_AP_NAME=LogMultiplier
+AFC_PROJ_DB_PATH=U:/ECE450/Lab4/db/LogMultiplier.quartus_db
