@@ -1,0 +1,14 @@
+ProducerConsumer
+    This file will be what you run(java ProducerConsumer)
+    It sets up the treads and such
+BoundedBuffer
+    This is the buffer. It keeps track of when to wait and notify 
+    consumer/Producer
+Producer
+    Produces a set of 1 million random numbers and keeps a cumulative value
+    adds these to the small buffer making sure to not override any thing
+    that has not been read yet
+consumer
+    reads the set of 1 million numbers and also keeps track. It is careful
+    to not read anything twice (and get ahead of Producer) thanks to 
+    BoundedBuffer
