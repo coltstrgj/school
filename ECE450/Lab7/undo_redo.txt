@@ -1,0 +1,60 @@
+WED
+
+	Undo Commands
+	     1.	Move Time Bar
+			 ***  *** 
+	     2.	Edit Waveform
+	     3.	Change Time Bars
+	     4.	Change Time Bars
+	     5.	Edit Waveform
+	     6.	Edit Waveform
+	     7.	Edit Waveform
+	     8.	Edit Waveform
+	     9.	Edit Waveform
+	    10.	Paste Waveform(s)
+	    11.	Paste Waveform(s)
+	    12.	Paste Waveform(s)
+	    13.	Paste Waveform(s)
+	    14.	Move Time Bar
+			 ***  *** 
+	    15.	Move Time Bar
+			 ***  *** 
+	    16.	Edit Waveform
+	    17.	Edit Waveform
+	    18.	Edit Waveform
+	    19.	Edit Waveform
+	    20.	Edit Waveform
+	    21.	Edit Waveform
+	    22.	Edit Waveform
+	    23.	Edit Waveform
+	    24.	Edit Waveform
+	    25.	Drop Node
+			 *** 
+	    26.	Drop Node
+			 *** 
+	    27.	Drop Node
+			 *** 
+	    28.	Insert Node or Bus
+
+
+RPW
+
+	Undo Commands
+	     1.	||Simulation Report||Simulator||Simulation Waveforms
+
+
+WED
+
+	Undo Commands
+	     1.	Paste Waveform(s)
+	     2.	Drop Node
+			 *** 
+	     3.	Drop Node
+			 *** 
+	     4.	Drop Node
+			 *** 
+	     5.	Drop Node
+			 *** 
+	     6.	Insert Node or Bus
+
+

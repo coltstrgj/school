@@ -1,0 +1,64 @@
+|Lab7
+CLK2 <= CLK2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK4 <= CLK4~reg0.DB_MAX_OUTPUT_PORT_TYPE
+P[1] <= create_pulse_clock:comb_3.port0
+P[2] <= create_pulse_clock:comb_3.port0
+P[3] <= create_pulse_clock:comb_3.port0
+P[4] <= create_pulse_clock:comb_3.port0
+P23 <= create_pulse_clock:comb_3.port1
+PULSE1 <= pyramid_counter:comb_4.port0
+PULSE2 <= pyramid_counter:comb_4.port1
+clk => clk~0.IN2
+clr => clr~0.IN2
+enable => enable~0.IN2
+
+
+|Lab7|create_pulse_clock:comb_3
+P[1] <= P[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+P[2] <= P[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+P[3] <= P[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+P[4] <= P[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+P23 <= P23~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => P23~reg0.CLK
+clk => P[1]~reg0.CLK
+clk => P[2]~reg0.CLK
+clk => P[3]~reg0.CLK
+clk => P[4]~reg0.CLK
+clr => P~4.OUTPUTSELECT
+clr => P~5.OUTPUTSELECT
+clr => P~6.OUTPUTSELECT
+clr => P~7.OUTPUTSELECT
+clr => P23~1.OUTPUTSELECT
+enable => P~0.OUTPUTSELECT
+enable => P~1.OUTPUTSELECT
+enable => P~2.OUTPUTSELECT
+enable => P~3.OUTPUTSELECT
+enable => P23~0.OUTPUTSELECT
+
+
+|Lab7|pyramid_counter:comb_4
+PULSE1 <= PULSE1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PULSE2 <= PULSE2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => cnt2[0].CLK
+clk => cnt2[1].CLK
+clk => cnt2[2].CLK
+clk => cnt2[3].CLK
+clk => cnt1[0].CLK
+clk => cnt1[1].CLK
+clk => cnt1[2].CLK
+clk => cnt1[3].CLK
+clk => PULSE2~reg0.CLK
+clk => PULSE1~reg0.CLK
+enable => PULSE2~reg0.ENA
+enable => cnt1[3].ENA
+enable => cnt1[2].ENA
+enable => cnt1[1].ENA
+enable => cnt1[0].ENA
+enable => cnt2[3].ENA
+enable => cnt2[2].ENA
+enable => cnt2[1].ENA
+enable => cnt2[0].ENA
+enable => PULSE1~reg0.ENA
+clr => ~NO_FANOUT~
+
+
