@@ -1,0 +1,64 @@
+|Subway_Signal_Control_Logic_II
+D <= state:comb_3.port0
+P[1] => P[1]~1.IN1
+P[2] => P[2]~0.IN1
+CLK => CLK~0.IN1
+A <= state:comb_3.port2
+B <= state:comb_3.port3
+C <= state:comb_3.port4
+cur_state[0] <= <GND>
+cur_state[1] <= <GND>
+cur_state[2] <= <GND>
+
+
+|Subway_Signal_Control_Logic_II|state:comb_3
+D <= D~reg0.DB_MAX_OUTPUT_PORT_TYPE
+P[1] => Mult6.IN1
+P[1] => Mult20.IN1
+P[1] => Mult23.IN1
+P[1] => Mult29.IN1
+P[1] => Mult38.IN1
+P[1] => Mult47.IN1
+P[1] => Mult52.IN1
+P[1] => Mult54.IN1
+P[1] => Mult57.IN1
+P[1] => Mult2.IN1
+P[1] => Mult8.IN0
+P[1] => Mult13.IN0
+P[1] => Mult17.IN0
+P[1] => Mult27.IN0
+P[1] => Mult33.IN0
+P[1] => Mult36.IN0
+P[1] => Mult42.IN0
+P[1] => Mult45.IN0
+P[1] => Mult49.IN0
+P[2] => Mult3.IN1
+P[2] => Mult10.IN1
+P[2] => Mult14.IN1
+P[2] => Mult18.IN1
+P[2] => Mult21.IN1
+P[2] => Mult30.IN1
+P[2] => Mult34.IN1
+P[2] => Mult39.IN1
+P[2] => Mult43.IN1
+P[2] => Mult46.IN1
+P[2] => Mult55.IN1
+P[2] => Mult7.IN1
+P[2] => Mult9.IN0
+P[2] => Mult19.IN0
+P[2] => Mult24.IN0
+P[2] => Mult28.IN0
+P[2] => Mult37.IN0
+P[2] => Mult48.IN0
+P[2] => Mult50.IN0
+P[2] => Mult53.IN0
+P[2] => Mult58.IN0
+A <= A~reg0.DB_MAX_OUTPUT_PORT_TYPE
+B <= B~reg0.DB_MAX_OUTPUT_PORT_TYPE
+C <= C~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => D~reg0.CLK
+CLK => C~reg0.CLK
+CLK => B~reg0.CLK
+CLK => A~reg0.CLK
+
+

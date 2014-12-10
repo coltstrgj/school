@@ -1,0 +1,257 @@
+Simulator report for Subway_Signal_Control_Logic_II
+Tue Dec 09 19:52:54 2014
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 90 nodes     ;
+; Simulation Coverage         ;      92.22 % ;
+; Total Number of Transitions ; 1753         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Functional ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      92.22 % ;
+; Total nodes checked                                 ; 90           ;
+; Total output ports checked                          ; 90           ;
+; Total output ports with complete 1/0-value coverage ; 83           ;
+; Total output ports with no 1/0-value coverage       ; 7            ;
+; Total output ports with no 1-value coverage         ; 7            ;
+; Total output ports with no 0-value coverage         ; 7            ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                                                  ;
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                   ; Output Port Name                                                                            ; Output Port Type ;
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------+
+; |Subway_Signal_Control_Logic_II|D                                                           ; |Subway_Signal_Control_Logic_II|D                                                           ; pin_out          ;
+; |Subway_Signal_Control_Logic_II|P[1]                                                        ; |Subway_Signal_Control_Logic_II|P[1]                                                        ; out              ;
+; |Subway_Signal_Control_Logic_II|P[2]                                                        ; |Subway_Signal_Control_Logic_II|P[2]                                                        ; out              ;
+; |Subway_Signal_Control_Logic_II|CLK                                                         ; |Subway_Signal_Control_Logic_II|CLK                                                         ; out              ;
+; |Subway_Signal_Control_Logic_II|A                                                           ; |Subway_Signal_Control_Logic_II|A                                                           ; pin_out          ;
+; |Subway_Signal_Control_Logic_II|B                                                           ; |Subway_Signal_Control_Logic_II|B                                                           ; pin_out          ;
+; |Subway_Signal_Control_Logic_II|C                                                           ; |Subway_Signal_Control_Logic_II|C                                                           ; pin_out          ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|D                                              ; |Subway_Signal_Control_Logic_II|state:comb_3|D                                              ; regout           ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|C                                              ; |Subway_Signal_Control_Logic_II|state:comb_3|C                                              ; regout           ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|B                                              ; |Subway_Signal_Control_Logic_II|state:comb_3|B                                              ; regout           ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|A                                              ; |Subway_Signal_Control_Logic_II|state:comb_3|A                                              ; regout           ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add0~0                                         ; |Subway_Signal_Control_Logic_II|state:comb_3|Add0~0                                         ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add1~0                                         ; |Subway_Signal_Control_Logic_II|state:comb_3|Add1~0                                         ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add2~0                                         ; |Subway_Signal_Control_Logic_II|state:comb_3|Add2~0                                         ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add3~0                                         ; |Subway_Signal_Control_Logic_II|state:comb_3|Add3~0                                         ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add4~0                                         ; |Subway_Signal_Control_Logic_II|state:comb_3|Add4~0                                         ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add5~0                                         ; |Subway_Signal_Control_Logic_II|state:comb_3|Add5~0                                         ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add6~0                                         ; |Subway_Signal_Control_Logic_II|state:comb_3|Add6~0                                         ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add7~0                                         ; |Subway_Signal_Control_Logic_II|state:comb_3|Add7~0                                         ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add8~0                                         ; |Subway_Signal_Control_Logic_II|state:comb_3|Add8~0                                         ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add9~0                                         ; |Subway_Signal_Control_Logic_II|state:comb_3|Add9~0                                         ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add10~0                                        ; |Subway_Signal_Control_Logic_II|state:comb_3|Add10~0                                        ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add11~0                                        ; |Subway_Signal_Control_Logic_II|state:comb_3|Add11~0                                        ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add12~0                                        ; |Subway_Signal_Control_Logic_II|state:comb_3|Add12~0                                        ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add13~0                                        ; |Subway_Signal_Control_Logic_II|state:comb_3|Add13~0                                        ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add14~0                                        ; |Subway_Signal_Control_Logic_II|state:comb_3|Add14~0                                        ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add15~0                                        ; |Subway_Signal_Control_Logic_II|state:comb_3|Add15~0                                        ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|Add16~0                                        ; |Subway_Signal_Control_Logic_II|state:comb_3|Add16~0                                        ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult58|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult58|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult57|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult57|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult56|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult56|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult54|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult54|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult53|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult53|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult52|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult52|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult51|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult51|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult50|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult50|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult49|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult49|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult48|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult48|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult47|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult47|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult46|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult46|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult45|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult45|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult44|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult44|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult43|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult43|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult42|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult42|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult41|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult41|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult40|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult40|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult38|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult38|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult37|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult37|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult36|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult36|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult35|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult35|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult34|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult34|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult33|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult33|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult32|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult32|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult31|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult31|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult29|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult29|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult28|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult28|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult27|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult27|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult26|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult26|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult25|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult25|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult24|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult24|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult23|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult23|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult22|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult22|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult20|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult20|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult19|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult19|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult18|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult18|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult17|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult17|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult16|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult16|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult15|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult15|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult14|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult14|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult13|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult13|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult12|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult12|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult11|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult11|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult10|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult10|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult9|multcore:mult_core|result[0]~0  ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult9|multcore:mult_core|result[0]~0  ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult8|multcore:mult_core|result[0]~0  ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult8|multcore:mult_core|result[0]~0  ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult7|multcore:mult_core|result[0]~0  ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult7|multcore:mult_core|result[0]~0  ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult6|multcore:mult_core|result[0]~0  ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult6|multcore:mult_core|result[0]~0  ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult5|multcore:mult_core|result[0]~0  ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult5|multcore:mult_core|result[0]~0  ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult4|multcore:mult_core|result[0]~0  ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult4|multcore:mult_core|result[0]~0  ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult3|multcore:mult_core|result[0]~0  ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult3|multcore:mult_core|result[0]~0  ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult2|multcore:mult_core|result[0]~0  ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult2|multcore:mult_core|result[0]~0  ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult1|multcore:mult_core|result[0]~0  ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult1|multcore:mult_core|result[0]~0  ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult0|multcore:mult_core|result[0]~0  ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult0|multcore:mult_core|result[0]~0  ; out0             ;
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                                                                     ;
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                   ; Output Port Name                                                                            ; Output Port Type ;
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------+
+; |Subway_Signal_Control_Logic_II|cur_state[0]                                                ; |Subway_Signal_Control_Logic_II|cur_state[0]                                                ; pin_out          ;
+; |Subway_Signal_Control_Logic_II|cur_state[1]                                                ; |Subway_Signal_Control_Logic_II|cur_state[1]                                                ; pin_out          ;
+; |Subway_Signal_Control_Logic_II|cur_state[2]                                                ; |Subway_Signal_Control_Logic_II|cur_state[2]                                                ; pin_out          ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult55|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult55|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult39|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult39|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult30|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult30|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult21|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult21|multcore:mult_core|result[0]~0 ; out0             ;
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                                                                     ;
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                   ; Output Port Name                                                                            ; Output Port Type ;
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------+
+; |Subway_Signal_Control_Logic_II|cur_state[0]                                                ; |Subway_Signal_Control_Logic_II|cur_state[0]                                                ; pin_out          ;
+; |Subway_Signal_Control_Logic_II|cur_state[1]                                                ; |Subway_Signal_Control_Logic_II|cur_state[1]                                                ; pin_out          ;
+; |Subway_Signal_Control_Logic_II|cur_state[2]                                                ; |Subway_Signal_Control_Logic_II|cur_state[2]                                                ; pin_out          ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult55|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult55|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult39|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult39|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult30|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult30|multcore:mult_core|result[0]~0 ; out0             ;
+; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult21|multcore:mult_core|result[0]~0 ; |Subway_Signal_Control_Logic_II|state:comb_3|lpm_mult:Mult21|multcore:mult_core|result[0]~0 ; out0             ;
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Tue Dec 09 19:52:54 2014
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off Subway_Signal_Control_Logic_II -c Subway_Signal_Control_Logic_II
+Info: Using vector source file "U:/ECE450/Lab8Corrected/Subway_Signal_Control_Logic_II.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      92.22 %
+Info: Number of transitions in simulation is 1753
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 147 megabytes
+    Info: Processing ended: Tue Dec 09 19:52:55 2014
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+
