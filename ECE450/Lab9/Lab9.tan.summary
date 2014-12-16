@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.597 ns
+From           : SC
+To             : state:comb_3|state.0110
+From Clock     : --
+To Clock       : TS
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.991 ns
+From           : state:comb_3|A[6]
+To             : A[6]
+From Clock     : TS
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -3.008 ns
+From           : SC
+To             : state:comb_3|state.1001
+From Clock     : --
+To Clock       : TS
+Failed Paths   : 0
+
+Type           : Clock Setup: 'TS'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 500.00 MHz ( period = 2.000 ns )
+From           : state:comb_3|state.1001
+To             : state:comb_3|state.1010
+From Clock     : TS
+To Clock       : TS
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

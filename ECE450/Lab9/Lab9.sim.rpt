@@ -1,0 +1,295 @@
+Simulator report for Lab9
+Tue Dec 16 13:13:23 2014
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 114 nodes    ;
+; Simulation Coverage         ;      81.42 % ;
+; Total Number of Transitions ; 540          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Functional ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Vector input source                                                                        ; Lab9.vwf   ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      81.42 % ;
+; Total nodes checked                                 ; 114          ;
+; Total output ports checked                          ; 113          ;
+; Total output ports with complete 1/0-value coverage ; 92           ;
+; Total output ports with no 1/0-value coverage       ; 21           ;
+; Total output ports with no 1-value coverage         ; 21           ;
+; Total output ports with no 0-value coverage         ; 21           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                          ;
++---------------------------------+---------------------------------+------------------+
+; Node Name                       ; Output Port Name                ; Output Port Type ;
++---------------------------------+---------------------------------+------------------+
+; |Lab9|A[0]                      ; |Lab9|A[0]                      ; pin_out          ;
+; |Lab9|A[1]                      ; |Lab9|A[1]                      ; pin_out          ;
+; |Lab9|A[2]                      ; |Lab9|A[2]                      ; pin_out          ;
+; |Lab9|A[3]                      ; |Lab9|A[3]                      ; pin_out          ;
+; |Lab9|A[4]                      ; |Lab9|A[4]                      ; pin_out          ;
+; |Lab9|A[5]                      ; |Lab9|A[5]                      ; pin_out          ;
+; |Lab9|A[6]                      ; |Lab9|A[6]                      ; pin_out          ;
+; |Lab9|A[7]                      ; |Lab9|A[7]                      ; pin_out          ;
+; |Lab9|B[0]                      ; |Lab9|B[0]                      ; pin_out          ;
+; |Lab9|B[1]                      ; |Lab9|B[1]                      ; pin_out          ;
+; |Lab9|B[2]                      ; |Lab9|B[2]                      ; pin_out          ;
+; |Lab9|C[0]                      ; |Lab9|C[0]                      ; pin_out          ;
+; |Lab9|C[1]                      ; |Lab9|C[1]                      ; pin_out          ;
+; |Lab9|C[2]                      ; |Lab9|C[2]                      ; pin_out          ;
+; |Lab9|ST                        ; |Lab9|ST                        ; pin_out          ;
+; |Lab9|TS                        ; |Lab9|TS                        ; out              ;
+; |Lab9|SC                        ; |Lab9|SC                        ; out              ;
+; |Lab9|state:comb_3|state~0      ; |Lab9|state:comb_3|state~0      ; out              ;
+; |Lab9|state:comb_3|state~1      ; |Lab9|state:comb_3|state~1      ; out              ;
+; |Lab9|state:comb_3|state~2      ; |Lab9|state:comb_3|state~2      ; out              ;
+; |Lab9|state:comb_3|state~3      ; |Lab9|state:comb_3|state~3      ; out              ;
+; |Lab9|state:comb_3|state~4      ; |Lab9|state:comb_3|state~4      ; out              ;
+; |Lab9|state:comb_3|state~5      ; |Lab9|state:comb_3|state~5      ; out              ;
+; |Lab9|state:comb_3|state~6      ; |Lab9|state:comb_3|state~6      ; out              ;
+; |Lab9|state:comb_3|state~7      ; |Lab9|state:comb_3|state~7      ; out              ;
+; |Lab9|state:comb_3|state~8      ; |Lab9|state:comb_3|state~8      ; out              ;
+; |Lab9|state:comb_3|state~9      ; |Lab9|state:comb_3|state~9      ; out              ;
+; |Lab9|state:comb_3|state~11     ; |Lab9|state:comb_3|state~11     ; out              ;
+; |Lab9|state:comb_3|state~18     ; |Lab9|state:comb_3|state~18     ; out              ;
+; |Lab9|state:comb_3|state~21     ; |Lab9|state:comb_3|state~21     ; out              ;
+; |Lab9|state:comb_3|WideOr0      ; |Lab9|state:comb_3|WideOr0      ; out0             ;
+; |Lab9|state:comb_3|WideOr1      ; |Lab9|state:comb_3|WideOr1      ; out0             ;
+; |Lab9|state:comb_3|state.1010   ; |Lab9|state:comb_3|state.1010   ; regout           ;
+; |Lab9|state:comb_3|A~0          ; |Lab9|state:comb_3|A~0          ; out0             ;
+; |Lab9|state:comb_3|B~0          ; |Lab9|state:comb_3|B~0          ; out0             ;
+; |Lab9|state:comb_3|C~0          ; |Lab9|state:comb_3|C~0          ; out0             ;
+; |Lab9|state:comb_3|state.1011   ; |Lab9|state:comb_3|state.1011   ; regout           ;
+; |Lab9|state:comb_3|WideOr2      ; |Lab9|state:comb_3|WideOr2      ; out0             ;
+; |Lab9|state:comb_3|state~24     ; |Lab9|state:comb_3|state~24     ; out0             ;
+; |Lab9|state:comb_3|state~25     ; |Lab9|state:comb_3|state~25     ; out              ;
+; |Lab9|state:comb_3|state~26     ; |Lab9|state:comb_3|state~26     ; out              ;
+; |Lab9|state:comb_3|state.1001   ; |Lab9|state:comb_3|state.1001   ; regout           ;
+; |Lab9|state:comb_3|state.1000   ; |Lab9|state:comb_3|state.1000   ; regout           ;
+; |Lab9|state:comb_3|state.0111   ; |Lab9|state:comb_3|state.0111   ; regout           ;
+; |Lab9|state:comb_3|state.0110   ; |Lab9|state:comb_3|state.0110   ; regout           ;
+; |Lab9|state:comb_3|state.0101   ; |Lab9|state:comb_3|state.0101   ; regout           ;
+; |Lab9|state:comb_3|state.0100   ; |Lab9|state:comb_3|state.0100   ; regout           ;
+; |Lab9|state:comb_3|state.0011   ; |Lab9|state:comb_3|state.0011   ; regout           ;
+; |Lab9|state:comb_3|state.0010   ; |Lab9|state:comb_3|state.0010   ; regout           ;
+; |Lab9|state:comb_3|state.0001   ; |Lab9|state:comb_3|state.0001   ; regout           ;
+; |Lab9|state:comb_3|state.0000   ; |Lab9|state:comb_3|state.0000   ; regout           ;
+; |Lab9|state:comb_3|ST           ; |Lab9|state:comb_3|ST           ; regout           ;
+; |Lab9|state:comb_3|C[0]         ; |Lab9|state:comb_3|C[0]         ; regout           ;
+; |Lab9|state:comb_3|C[1]         ; |Lab9|state:comb_3|C[1]         ; regout           ;
+; |Lab9|state:comb_3|C[2]         ; |Lab9|state:comb_3|C[2]         ; regout           ;
+; |Lab9|state:comb_3|B[0]         ; |Lab9|state:comb_3|B[0]         ; regout           ;
+; |Lab9|state:comb_3|B[1]         ; |Lab9|state:comb_3|B[1]         ; regout           ;
+; |Lab9|state:comb_3|B[2]         ; |Lab9|state:comb_3|B[2]         ; regout           ;
+; |Lab9|state:comb_3|A[0]         ; |Lab9|state:comb_3|A[0]         ; regout           ;
+; |Lab9|state:comb_3|A[1]         ; |Lab9|state:comb_3|A[1]         ; regout           ;
+; |Lab9|state:comb_3|A[2]         ; |Lab9|state:comb_3|A[2]         ; regout           ;
+; |Lab9|state:comb_3|A[3]         ; |Lab9|state:comb_3|A[3]         ; regout           ;
+; |Lab9|state:comb_3|A[4]         ; |Lab9|state:comb_3|A[4]         ; regout           ;
+; |Lab9|state:comb_3|A[5]         ; |Lab9|state:comb_3|A[5]         ; regout           ;
+; |Lab9|state:comb_3|A[6]         ; |Lab9|state:comb_3|A[6]         ; regout           ;
+; |Lab9|state:comb_3|A[7]         ; |Lab9|state:comb_3|A[7]         ; regout           ;
+; |Lab9|state:comb_3|state~27     ; |Lab9|state:comb_3|state~27     ; out0             ;
+; |Lab9|state:comb_3|state~29     ; |Lab9|state:comb_3|state~29     ; out0             ;
+; |Lab9|state:comb_3|state~31     ; |Lab9|state:comb_3|state~31     ; out0             ;
+; |Lab9|state:comb_3|state~33     ; |Lab9|state:comb_3|state~33     ; out0             ;
+; |Lab9|state:comb_3|state~35     ; |Lab9|state:comb_3|state~35     ; out0             ;
+; |Lab9|state:comb_3|state~37     ; |Lab9|state:comb_3|state~37     ; out0             ;
+; |Lab9|state:comb_3|state~39     ; |Lab9|state:comb_3|state~39     ; out0             ;
+; |Lab9|state:comb_3|state.0110~0 ; |Lab9|state:comb_3|state.0110~0 ; out0             ;
+; |Lab9|state:comb_3|state~41     ; |Lab9|state:comb_3|state~41     ; out0             ;
+; |Lab9|state:comb_3|state~43     ; |Lab9|state:comb_3|state~43     ; out0             ;
+; |Lab9|state:comb_3|state~45     ; |Lab9|state:comb_3|state~45     ; out0             ;
+; |Lab9|state:comb_3|state.1001~0 ; |Lab9|state:comb_3|state.1001~0 ; out0             ;
+; |Lab9|state:comb_3|state~47     ; |Lab9|state:comb_3|state~47     ; out0             ;
+; |Lab9|state:comb_3|state~49     ; |Lab9|state:comb_3|state~49     ; out0             ;
+; |Lab9|state:comb_3|state~51     ; |Lab9|state:comb_3|state~51     ; out0             ;
+; |Lab9|state:comb_3|state~55     ; |Lab9|state:comb_3|state~55     ; out0             ;
+; |Lab9|state:comb_3|Selector0~0  ; |Lab9|state:comb_3|Selector0~0  ; out0             ;
+; |Lab9|state:comb_3|Selector1~0  ; |Lab9|state:comb_3|Selector1~0  ; out0             ;
+; |Lab9|state:comb_3|Selector2~0  ; |Lab9|state:comb_3|Selector2~0  ; out0             ;
+; |Lab9|state:comb_3|Selector3~0  ; |Lab9|state:comb_3|Selector3~0  ; out0             ;
+; |Lab9|state:comb_3|Selector4~0  ; |Lab9|state:comb_3|Selector4~0  ; out0             ;
+; |Lab9|state:comb_3|Selector5~0  ; |Lab9|state:comb_3|Selector5~0  ; out0             ;
+; |Lab9|state:comb_3|Selector6~0  ; |Lab9|state:comb_3|Selector6~0  ; out0             ;
+; |Lab9|state:comb_3|Selector7~0  ; |Lab9|state:comb_3|Selector7~0  ; out0             ;
+; |Lab9|state:comb_3|Selector8~0  ; |Lab9|state:comb_3|Selector8~0  ; out0             ;
+; |Lab9|state:comb_3|Selector9~0  ; |Lab9|state:comb_3|Selector9~0  ; out0             ;
++---------------------------------+---------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                           ;
++--------------------------------+--------------------------------+------------------+
+; Node Name                      ; Output Port Name               ; Output Port Type ;
++--------------------------------+--------------------------------+------------------+
+; |Lab9|state:comb_3|state~10    ; |Lab9|state:comb_3|state~10    ; out              ;
+; |Lab9|state:comb_3|state~12    ; |Lab9|state:comb_3|state~12    ; out              ;
+; |Lab9|state:comb_3|state~13    ; |Lab9|state:comb_3|state~13    ; out              ;
+; |Lab9|state:comb_3|state~14    ; |Lab9|state:comb_3|state~14    ; out              ;
+; |Lab9|state:comb_3|state~15    ; |Lab9|state:comb_3|state~15    ; out              ;
+; |Lab9|state:comb_3|state~16    ; |Lab9|state:comb_3|state~16    ; out              ;
+; |Lab9|state:comb_3|state~17    ; |Lab9|state:comb_3|state~17    ; out              ;
+; |Lab9|state:comb_3|state~19    ; |Lab9|state:comb_3|state~19    ; out              ;
+; |Lab9|state:comb_3|state~20    ; |Lab9|state:comb_3|state~20    ; out              ;
+; |Lab9|state:comb_3|state~22    ; |Lab9|state:comb_3|state~22    ; out              ;
+; |Lab9|state:comb_3|state~23    ; |Lab9|state:comb_3|state~23    ; out              ;
+; |Lab9|state:comb_3|Selector0~1 ; |Lab9|state:comb_3|Selector0~1 ; out0             ;
+; |Lab9|state:comb_3|Selector1~1 ; |Lab9|state:comb_3|Selector1~1 ; out0             ;
+; |Lab9|state:comb_3|Selector2~1 ; |Lab9|state:comb_3|Selector2~1 ; out0             ;
+; |Lab9|state:comb_3|Selector3~1 ; |Lab9|state:comb_3|Selector3~1 ; out0             ;
+; |Lab9|state:comb_3|Selector4~1 ; |Lab9|state:comb_3|Selector4~1 ; out0             ;
+; |Lab9|state:comb_3|Selector5~1 ; |Lab9|state:comb_3|Selector5~1 ; out0             ;
+; |Lab9|state:comb_3|Selector6~1 ; |Lab9|state:comb_3|Selector6~1 ; out0             ;
+; |Lab9|state:comb_3|Selector7~1 ; |Lab9|state:comb_3|Selector7~1 ; out0             ;
+; |Lab9|state:comb_3|Selector8~1 ; |Lab9|state:comb_3|Selector8~1 ; out0             ;
+; |Lab9|state:comb_3|Selector9~1 ; |Lab9|state:comb_3|Selector9~1 ; out0             ;
++--------------------------------+--------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                           ;
++--------------------------------+--------------------------------+------------------+
+; Node Name                      ; Output Port Name               ; Output Port Type ;
++--------------------------------+--------------------------------+------------------+
+; |Lab9|state:comb_3|state~10    ; |Lab9|state:comb_3|state~10    ; out              ;
+; |Lab9|state:comb_3|state~12    ; |Lab9|state:comb_3|state~12    ; out              ;
+; |Lab9|state:comb_3|state~13    ; |Lab9|state:comb_3|state~13    ; out              ;
+; |Lab9|state:comb_3|state~14    ; |Lab9|state:comb_3|state~14    ; out              ;
+; |Lab9|state:comb_3|state~15    ; |Lab9|state:comb_3|state~15    ; out              ;
+; |Lab9|state:comb_3|state~16    ; |Lab9|state:comb_3|state~16    ; out              ;
+; |Lab9|state:comb_3|state~17    ; |Lab9|state:comb_3|state~17    ; out              ;
+; |Lab9|state:comb_3|state~19    ; |Lab9|state:comb_3|state~19    ; out              ;
+; |Lab9|state:comb_3|state~20    ; |Lab9|state:comb_3|state~20    ; out              ;
+; |Lab9|state:comb_3|state~22    ; |Lab9|state:comb_3|state~22    ; out              ;
+; |Lab9|state:comb_3|state~23    ; |Lab9|state:comb_3|state~23    ; out              ;
+; |Lab9|state:comb_3|Selector0~1 ; |Lab9|state:comb_3|Selector0~1 ; out0             ;
+; |Lab9|state:comb_3|Selector1~1 ; |Lab9|state:comb_3|Selector1~1 ; out0             ;
+; |Lab9|state:comb_3|Selector2~1 ; |Lab9|state:comb_3|Selector2~1 ; out0             ;
+; |Lab9|state:comb_3|Selector3~1 ; |Lab9|state:comb_3|Selector3~1 ; out0             ;
+; |Lab9|state:comb_3|Selector4~1 ; |Lab9|state:comb_3|Selector4~1 ; out0             ;
+; |Lab9|state:comb_3|Selector5~1 ; |Lab9|state:comb_3|Selector5~1 ; out0             ;
+; |Lab9|state:comb_3|Selector6~1 ; |Lab9|state:comb_3|Selector6~1 ; out0             ;
+; |Lab9|state:comb_3|Selector7~1 ; |Lab9|state:comb_3|Selector7~1 ; out0             ;
+; |Lab9|state:comb_3|Selector8~1 ; |Lab9|state:comb_3|Selector8~1 ; out0             ;
+; |Lab9|state:comb_3|Selector9~1 ; |Lab9|state:comb_3|Selector9~1 ; out0             ;
++--------------------------------+--------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Tue Dec 16 13:13:23 2014
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off Lab9 -c Lab9
+Info: Using vector source file "U:/ECE450/Lab9/Lab9.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      81.42 %
+Info: Number of transitions in simulation is 540
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 147 megabytes
+    Info: Processing ended: Tue Dec 16 13:13:23 2014
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

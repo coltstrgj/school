@@ -1,0 +1,2 @@
+artistResMgrCalcExprSetup("false" "plot" "E0" "v("/Vout" ?result "tran")")
+artistResMgrCalcExprSetup("false" "plot" "E1" "v("/Vout" ?result "tran")")
