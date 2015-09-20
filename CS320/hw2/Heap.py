@@ -5,6 +5,7 @@
 # array might be unused. This is always a power of two.
 # self._size: Number of elements currently stored in self._H; this
 # is always at least self._allocation/4 and at most self._allocation
+from copy import copy
 class Heap(object):
 
     # constructor: create a heap with allocation 1 and size 0:
@@ -16,10 +17,11 @@ class Heap(object):
     #
     # To call it, execute P = Heap(); this assigns a reference to an
     # empty heap to variable P. (It implements the "priority queue" ADT.)
-    def __init__(self):
+    def __init__(self, k):
         self._H = [0]
         self._size = 0
         self._allocation = 1
+        self._k = k
 
     # get current size
     # If P contains a reference to it, then call it with P.getSize()
@@ -41,7 +43,7 @@ class Heap(object):
     # to ’self’ and the reference to the integer in pos to i.
     def parent(self, pos):
         if pos <= 0: return None
-        else: return (pos - 1) / 2
+        else: return (pos - 1) / self._k
 
     # Swap the elements at pos1 and pos2 of the heap array. Leave the
     # structure unchanged if one or more of the indices are not in
@@ -78,16 +80,16 @@ class Heap(object):
     # the index of this child, whether or not it exists and whether
     # or not its position is beyond the end of the heap array
     def childIndex (self, pos, i):
-        return (pos * 2) + i + 1 #fix the two later to be 'k' +1 because arrays start from 0 not 1
+        return (pos * self._k) + i + 1 #fix the two later to be 'k' +1 because arrays start from 0 not 1
 
     # Tell the key in child number i (i in {0,1}) of the node at position ’pos’
     # of heap array. If there is no such child, return None. Precondition
     # is that i is in {0,1}
     def child (self, pos, i):
-        if (pos * 2) + i + 1 > self.getSize() - 1:
+        if (pos * self._k) + i + 1 > self.getSize() - 1:
             return "None"
         tmp = self.getArray()
-        return tmp[(pos * 2) + 1 + i]
+        return tmp[(pos * self._k) + 1 + i]
 
 
     """
@@ -105,8 +107,7 @@ class Heap(object):
         if pos + 1 > self.getSize():
             return "none"
         child_list = []
-        #for i in range(0, k)
-        for i in range(0, 2):
+        for i in range(0, self._k):
             key = self.child(pos, i)
             if key != "None":
                 child_list = child_list + [key]
@@ -136,24 +137,27 @@ class Heap(object):
         # restore the heap property by bubbling it down to a point where
         # it’s at last spot  or its children are at least as large and parents
         # are at least as small
-        #print str(self.getArray())
+        print str(self.getArray())
         while pos < self._size:
             min_child_val = self.child(pos, 0) # initialize to first child
             min_child_pos = 0 #start at child 0, look for min
-            #print "min_child_val: " + str(min_child_val)
+            #print "children are " + str(self.children(pos))
             # for loop finds min child index
+            child_pos = 0 #this will keep track of which child we are checking
             for i in self.children(pos): # i will be the value of each children, works for size k
-                #print "  i is: " + str(i)
+                #we waste one cycle because we know that first child will never need to swap with itself, find a fix
+                #print "  i is: " + str(i) + " min_child_pos " + str(min_child_pos) + " child_pos " + str(child_pos)
                 if i < min_child_val:
                     #print "    min child was " + str(min_child_val) + " now it is " + str(i)
                     min_child_val=i
-                ++min_child_pos
+                    min_child_pos = copy(child_pos)
+                child_pos = child_pos + 1 #why does ++child_pos not work?
             min_child_pos = self.childIndex(pos, min_child_pos) #convert min_child_pos from child number to actual pos of child in array
             if self._H[pos] > min_child_val:
                 self.swap(pos, min_child_pos) #swaps pos with its smallest children
                 #print str(self.getArray())
             pos = min_child_pos
-        #print "Final Array: " + str(self.getArray())
+        #print "Final Array: " + str(self.getArray()) + "\n"
         return min_item
 
     '''
@@ -212,12 +216,14 @@ class Heap(object):
 
     #'''
 if __name__ == "__main__":
-    P = Heap()
+    P = Heap(3)
     P.insert(10)
     P.insert(5)
     P.insert(15)
     P.insert(3)
     P.insert(29)
+    for i in range(11, 22):
+        P.insert(i)
     print"Child of 2: " + str(P.child(1, 1))
     print"Heap array: " + str(P.getArray())
     print"Size: " + str(P.getSize())
