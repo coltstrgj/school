@@ -5,7 +5,6 @@
 # array might be unused. This is always a power of two.
 # self._size: Number of elements currently stored in self._H; this
 # is always at least self._allocation/4 and at most self._allocation
-from copy import copy
 class Heap(object):
 
     # constructor: create a heap with allocation 1 and size 0:
@@ -105,7 +104,7 @@ class Heap(object):
     """
     def children(self, pos):
         if pos + 1 > self.getSize():
-            return "none"
+            return []
         child_list = []
         for i in range(0, self._k):
             key = self.child(pos, i)
@@ -132,32 +131,12 @@ class Heap(object):
         min_item = self._H[0]
         self._H[0] = self._H[self._size - 1] #move the last element to min position
         self._H[self._size - 1] = 0 #zero the unused element (for debug, really isnt important other than for getArray())
-        pos = 0
         self._size -= 1
         # restore the heap property by bubbling it down to a point where
         # it’s at last spot  or its children are at least as large and parents
         # are at least as small
-        print str(self.getArray())
-        while pos < self._size:
-            min_child_val = self.child(pos, 0) # initialize to first child
-            min_child_pos = 0 #start at child 0, look for min
-            #print "children are " + str(self.children(pos))
-            # for loop finds min child index
-            child_pos = 0 #this will keep track of which child we are checking
-            for i in self.children(pos): # i will be the value of each children, works for size k
-                #we waste one cycle because we know that first child will never need to swap with itself, find a fix
-                #print "  i is: " + str(i) + " min_child_pos " + str(min_child_pos) + " child_pos " + str(child_pos)
-                if i < min_child_val:
-                    #print "    min child was " + str(min_child_val) + " now it is " + str(i)
-                    min_child_val=i
-                    min_child_pos = copy(child_pos)
-                child_pos = child_pos + 1 #why does ++child_pos not work?
-            min_child_pos = self.childIndex(pos, min_child_pos) #convert min_child_pos from child number to actual pos of child in array
-            if self._H[pos] > min_child_val:
-                self.swap(pos, min_child_pos) #swaps pos with its smallest children
-                #print str(self.getArray())
-            pos = min_child_pos
-        #print "Final Array: " + str(self.getArray()) + "\n"
+        #print str(self.getArray())
+        self.heapify(0)
         return min_item
 
     '''
@@ -174,13 +153,20 @@ class Heap(object):
 
     '''
 
-    def heapify(self, pos):#what is this one even for? it serves the same purpose as strAux
-        #children=self.children(pos)
-        #for i in range(len(children)):
-        #    outString = self.strAux(self.childIndex(pos,i), depth+1, outString)
-        outString = ""
-        outString = self.strAux(pos, 0, outString)
-        return outString
+    def heapify(self, pos):
+        children = self.children(pos)
+        if not children : #if this has no children we are at the bottom, we are done
+            return
+        #otherwise we have to do this again
+        min_child = min(children)#only want to run this once
+        if self._H[pos] > min_child:
+            #we have to swap them
+            min_child_pos = self.childIndex(pos, children.index(min_child))
+            self.swap(pos, min_child_pos)
+            pos = min_child_pos #we swapped so we have to recurse
+            self.heapify(pos)
+
+        return
     """
         Create a string that is suitable for displaying structure of the heap
         To print the heap array, print P._H. This one displays which key
@@ -224,7 +210,6 @@ if __name__ == "__main__":
     P.insert(29)
     for i in range(11, 22):
         P.insert(i)
-    print"Child of 2: " + str(P.child(1, 1))
     print"Heap array: " + str(P.getArray())
     print"Size: " + str(P.getSize())
     print"allocation " + str(P.getAllocation())
