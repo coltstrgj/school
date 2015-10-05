@@ -1,0 +1,30 @@
+Fastest
+L1_D.32.4--L1_I.32kB.4--L2.1024.kB.4.txt    7257957 cycles total
+
+All Others Compared
+L1_D.32.4--L1_I.32kB.4--L2.1024.kB.8.txt is 0 cycles slower than fastest
+L1_D.32.4--L1_I.32kB.4--L2.2048.kB.4.txt is 0 cycles slower than fastest
+L1_D.32.4--L1_I.32kB.4--L2.2048.kB.8.txt is 0 cycles slower than fastest
+L1_D.32.4--L1_I.32kB.4--L2.4096.kB.4.txt is 0 cycles slower than fastest
+L1_D.32.4--L1_I.32kB.4--L2.4096.kB.8.txt is 0 cycles slower than fastest
+L1_D.32.4--L1_I.32kB.4--L2.512.kB.8.txt is  0 cycles slower than fastest
+L1_D.32.4--L1_I.32kB.4--L2.512.kB.4.txt is  135 cycles slower than fastest
+L1_D.32.4--L1_I.32kB.4--L2.256.kB.8.txt is  3489 cycles slower than fastest
+L1_D.32.4--L1_I.32kB.4--L2.256.kB.4.txt is  7417 cycles slower than fastest
+L1_D.32.4--L1_I.32kB.4--L2.128.kB.8.txt is  30188 cycles slower than fastest
+L1_D.32.4--L1_I.32kB.4--L2.128.kB.4.txt is  33179 cycles slower than fastest
+L1_D.4.4--L1_I.32kB.4--L2.128kB.4.txt is    33179 cycles slower than fastest
+L1_D.4.4--L1_I.16kB.4--L2.128kB.4.txt is    47239 cycles slower than fastest
+L1_D.4.4--L1_I.32kB.2--L2.128kB.4.txt is    35645 cycles slower than fastest
+L1_D.4.4--L1_I.16kB.2--L2.128kB.4.txt is    57543 cycles slower than fastest
+L1_D.4.4--L1_I.8kB.4--L2.128kB.4.txt is     91968 cycles slower than fastest
+L1_D.4.4--L1_I.8kB.2--L2.128kB.4.txt is     103600 cycles slower than fastest
+L1_D.4.4--L1_I.4kB.4--L2.128kB.4.txt is     182821 cycles slower than fastest
+L1_D.32.4--L1_I.4kB.2--L2.128kB.4.txt is    187380 cycles slower than fastest
+L1_D.4.4--L1_I.4kB.2--L2.128kB.4.txt is     187380 cycles slower than fastest
+L1_D.32.2--L1_I.4kB.2--L2.128kB.4.txt is    187386 cycles slower than fastest
+L1_D.16.2--L1_I.4kB.2--L2.128kB.4.txt is    190039 cycles slower than fastest
+L1_D.16.4--L1_I.4kB.2--L2.128kB.4.txt is    190199 cycles slower than fastest
+L1_D.8.4--L1_I.4kB.2--L2.128kB.4.txt is     192559 cycles slower than fastest
+L1_D.8.2--L1_I.4kB.2--L2.128kB.4.txt is     193087 cycles slower than fastest
+L1_D.4.2--L1_I.4kB.2--L2.128kB.4.txt is     195393 cycles slower than fastest
