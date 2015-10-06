@@ -1,0 +1,12 @@
+In the problem 2 simulations, the fastest case results are shown in the table below
+
+        |Data Size|Data ASSOC|INST Size|INST ASSOC|
+RADIX       8kB         2         16kB      4
+RAYTRACE    16kB        4         16kB      4
+FFT         16kB        2         16kB      4
+
+The Full simulation results are available at 
+For RADIX ./RESULTS/Problem2_RADIX/L1_D.8kB.2--L1_I.16kB.4.txt is the fastest
+For RAYTRACE ./RESULTS/Problem2_RAYTRACE/L1_D.16kB.4--L1_I.16kB.4.txt is the fastest
+For FFT ./RESULTS/Problem2_FFT/L1_D.16kB.2--L1_I.16kB.4.txt is the fastest
+

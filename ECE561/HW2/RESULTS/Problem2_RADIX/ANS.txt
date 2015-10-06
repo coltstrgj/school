@@ -1,0 +1,3 @@
+[104mFastest Running setup[49m
+[104mL1_D_SIZE: 8   L1_D_ASSOC: 2[49m
+[104mL1_I_SIZE: 16   L1_I_ASSOC: 4[49m

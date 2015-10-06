@@ -1,0 +1,12 @@
+./Problem2_RADIX/L1_D.8kB.2--L1_I.16kB.4.txt is the fastest at 5689603 cycles
+./Problem2_RADIX/L1_D.16kB.2--L1_I.4kB.2.txt is 34891 cycles slower than fastest
+./Problem2_RADIX/L1_D.16kB.4--L1_I.4kB.2.txt is 34891 cycles slower than fastest
+./Problem2_RADIX/L1_D.4kB.2--L1_I.4kB.2.txt is 45078 cycles slower than fastest
+./Problem2_RADIX/L1_D.4kB.4--L1_I.4kB.2.txt is 43151 cycles slower than fastest
+./Problem2_RADIX/L1_D.8kB.2--L1_I.16kB.2.txt is 5925 cycles slower than fastest
+./Problem2_RADIX/L1_D.8kB.2--L1_I.16kB.4.txt is 0 cycles slower than fastest
+./Problem2_RADIX/L1_D.8kB.2--L1_I.4kB.2.txt is 34623 cycles slower than fastest
+./Problem2_RADIX/L1_D.8kB.2--L1_I.4kB.4.txt is 35509 cycles slower than fastest
+./Problem2_RADIX/L1_D.8kB.2--L1_I.8kB.2.txt is 19488 cycles slower than fastest
+./Problem2_RADIX/L1_D.8kB.2--L1_I.8kB.4.txt is 7854 cycles slower than fastest
+./Problem2_RADIX/L1_D.8kB.4--L1_I.4kB.2.txt is 42232 cycles slower than fastest

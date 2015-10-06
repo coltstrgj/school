@@ -1,0 +1,12 @@
+./Problem2_FFT/L1_D.16kB.2--L1_I.16kB.4.txt is the fastest at 3424504 cycles
+./Problem2_FFT/L1_D.16kB.2--L1_I.16kB.2.txt is 713643 cycles slower than fastest
+./Problem2_FFT/L1_D.16kB.2--L1_I.16kB.4.txt is 0 cycles slower than fastest
+./Problem2_FFT/L1_D.16kB.2--L1_I.4kB.2.txt is 5512580 cycles slower than fastest
+./Problem2_FFT/L1_D.16kB.2--L1_I.4kB.4.txt is 3475043 cycles slower than fastest
+./Problem2_FFT/L1_D.16kB.2--L1_I.8kB.2.txt is 1858831 cycles slower than fastest
+./Problem2_FFT/L1_D.16kB.2--L1_I.8kB.4.txt is 367236 cycles slower than fastest
+./Problem2_FFT/L1_D.16kB.4--L1_I.4kB.2.txt is 5519232 cycles slower than fastest
+./Problem2_FFT/L1_D.4kB.2--L1_I.4kB.2.txt is 5570615 cycles slower than fastest
+./Problem2_FFT/L1_D.4kB.4--L1_I.4kB.2.txt is 5539883 cycles slower than fastest
+./Problem2_FFT/L1_D.8kB.2--L1_I.4kB.2.txt is 5531061 cycles slower than fastest
+./Problem2_FFT/L1_D.8kB.4--L1_I.4kB.2.txt is 5519241 cycles slower than fastest

@@ -1,0 +1,12 @@
+./Problem2_RAYTRACE/L1_D.16kB.4--L1_I.16kB.4.txt is the fastest at 11869392 cycles
+./Problem2_RAYTRACE/L1_D.16kB.2--L1_I.4kB.2.txt is 35492069 cycles slower than fastest
+./Problem2_RAYTRACE/L1_D.16kB.4--L1_I.16kB.2.txt is 4355777 cycles slower than fastest
+./Problem2_RAYTRACE/L1_D.16kB.4--L1_I.16kB.4.txt is 0 cycles slower than fastest
+./Problem2_RAYTRACE/L1_D.16kB.4--L1_I.4kB.2.txt is 35432507 cycles slower than fastest
+./Problem2_RAYTRACE/L1_D.16kB.4--L1_I.4kB.4.txt is 36102524 cycles slower than fastest
+./Problem2_RAYTRACE/L1_D.16kB.4--L1_I.8kB.2.txt is 17203881 cycles slower than fastest
+./Problem2_RAYTRACE/L1_D.16kB.4--L1_I.8kB.4.txt is 15147462 cycles slower than fastest
+./Problem2_RAYTRACE/L1_D.4kB.2--L1_I.4kB.2.txt is 35838443 cycles slower than fastest
+./Problem2_RAYTRACE/L1_D.4kB.4--L1_I.4kB.2.txt is 35679956 cycles slower than fastest
+./Problem2_RAYTRACE/L1_D.8kB.2--L1_I.4kB.2.txt is 35592227 cycles slower than fastest
+./Problem2_RAYTRACE/L1_D.8kB.4--L1_I.4kB.2.txt is 35520493 cycles slower than fastest
