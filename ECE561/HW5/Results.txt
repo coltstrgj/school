@@ -1,0 +1,71 @@
+Colt Darien
+ECE 561
+Homeowork 5
+
+
+First things first: gprof is not working on gem5.opt, so I looked it up. I found that I had to build gem5.prof. That worked, build went fine, but when I compile FFT with the -pg flag, and try to simulate it, I get the same error with gem5.prof that I did with gem5.opt. I get the error as follows:
+"
+warn: ignoring syscall rt_sigaction(27, ...)
+      (further warnings will be suppressed)
+fatal: syscall setitimer (#104) unimplemented.
+ @ tick 13981000
+[unimplementedFunc:build/ARM/sim/syscall_emul.cc, line 91]
+Memory Usage: 677956 KBytes
+Program aborted at cycle 13981000
+Aborted (core dumped)
+"
+
+Since that is not working, I just "brute force" it. I made a script to run a bunch of simulations on different files. Each file has a change, if the change benefits running time, I merge them together and try again. If it is worse for run time, I drop it. 
+My discoveries:
+The makefile had the -O2 option set, so I obviously had to get rid of that to test my optimizations rather than the compilers. I did notate the -O2 run time though for reference. 
+Inlining(via the "inline" function) did literally nothing to run time for most of these. Not even a single cycle different. I am not sure why that is, but I suppose that it is probably something to do with the way the compiler handles that function for ARM. I timed the program running on my machine, and noticed slight changes, but that could also be due context switching or any number of other things. 
+Unrolling almost unanimously made this worse. I think that loop unrolling is a great optimization in theory, so I do not know why it did not work here. It seems like it may have more effect if there were dependencies, and the processor supported out of order execution, but other than that, it seems like it would only get rid of a constant ammount of processing algorithm wise(no discernable speedup). 
+
+quick tally of things I tried
+  loop unrolling:made things slower in this case
+  loop tiling/blocking:worked very well
+  inlining:no effect in this case
+  *loop splitting: I tried to find a place where I could loop split, but I could not find a place in the code (but I may have missed a spot)where the loop had an if inside that did not depend on something else inside the loop. Because of this, I could not actually try loop splitting. This did however lead me to a place where a while loop was poorly done(detailed below) that saved quite a few commands being run. 
+
+
+
+
+I Notate my trials more in detail below. They are numbered, and their running times are in a list below. 
+
+0:  Remove -O2 command so that I can see which of my optimizations are good, not compilers
+1:  Default settings run
+2:  Inline touchArray, bitreverse, FFT1D, . Get same results as before? This is not what I was expecting. Try inlining lots of things, and still get same results which is very strange.
+3:  try unrolling in Transpose
+4:  try tiling the InitX into 16 different for loops(could probably be smaller number, waste of space I know, but in this assignment we did not have size constraints)
+5:  I noticed that a while loop had a bool to detect finish instead of a break while I was looking for a place I could try loop nest splitting. saved a lot of boolean comparrisons (search for "#5" in code to see what I mean)
+6:  Did some loop tiling in FFT1DOnce, only 4 "for" loopsthis time instead of the sixteen in InitX.. 
+7:  tried unrolling CopyColumn
+8:  Tiled Transpose (4)
+9:  Tiled transpose farther (8) to a slight slow down as compared to just the 4x tiling. 
+10: Loop Tiled InitU2 (2)
+11-a big number: I tried Loop Tiling every single nested for loop (I think, may have missed some, but I doubt it) and all of the ones that are not mentioned prior to here made the running time worse, so I did not write them down.  
+
+
+                  (numbers that do not have a percentage were not improvements, so are unmarked because changes were rolled back)
+      numCycles   Percentage of default run time
+-O2:  2880774     99.994
+1:    2882378     100.000
+2:    2882378
+3:    2974276
+4:    2684367     93.13 
+5:    259550      90.056
+6:    2467400     85.60
+7:    2510037
+8:    2458535     85.30 
+9:    2458590     
+10:   2655824
+
+
+so my best run time was 2458535 cycles when my original time was 2882378. That is a run time of %85.30 of the original run time. 
+
+
+
+
+
+My run command: build/ARM/gem5.prof configs/example/se.py --cpu-type="detailed" --sys-clock=2GHz --cpu-clock=2GHz --caches --l1d_size=16kB --l1i_size=16kB --l1d_assoc=2 --l1i_assoc=2 --cmd=splash2-orig/codes/kernels/fft/FFT -o "-m8 -o"; cat m5out/stats.txt | grep system.cpu.numCycles | sed 's/[^0-9]//g'; gprof splash2-orig/codes/kernels/fft/FFT > splash2-orig/codes/kernels/fft/gprof_output.txt
+
