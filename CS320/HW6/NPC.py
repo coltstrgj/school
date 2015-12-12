@@ -8,7 +8,7 @@ from Graph2 import Graph
     how to show that problems are NP-complete and NP-hard '''
 class UndirectedGraph(Graph):
 
-  #problem1 minWeightVertCover
+  #problem1 minWeightVertCover wat is happenign to github.exe
   '''
   Write a similar method for finding a minimum-weight vertex cover.
   The returned Python list should consist of two elements. The first element should be
