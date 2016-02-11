@@ -15,5 +15,11 @@ Example: running "./cipher B message.txt cipher_text key.txt E"
   will use a Block Cipher(1) and Encrypt(5) the data contained in message.txt(2) using the key contained in key.txt(4). The resulting output will be written to cipher_text (3).
 
 --------------------
-to build
-type "make" in console. This will build a cipher.o file and then build the "cipher" executable. 
+Building
+type "make" in console. This will build a cipher.o file and then build the "cipher" executable
+
+--------------------
+Problems and explanation for code.
+Coding decisions: There are several things that I could do to improve this program. I could make it bundles faster by inlining a few things, and changing some things that I did for sucinctness of code, and otherwise readability. These changes would not be hard to make, and could imporve the speed greatly, but it is already fast enough to be un-noticable to most users (and on "small" files)
+
+Problems faced: The instructions say that the key for stream cipher is in hexadecimal. This is entirely untrue. I read in this file, and converted to hex to get the key 00000001.....11111111. This led to a very different ciphertext output. I had to leave this input in ascii format in order to get the same output from the example. 

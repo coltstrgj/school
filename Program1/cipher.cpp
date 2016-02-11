@@ -2,7 +2,14 @@
 //CS356 Assignment 1
 //using c++ 11 (so pretty much every arg is a pointer and not actually passed
 
-
+/*
+ * The included makefile can be used to build this program. I fully intended to make a .h file at some point, but never got the chacne, or found the need.
+ * You can use $"./cipher B inputText outputText keyText E" to use the block encryption mode on input file
+ * You can use $"./cipher B inputText outputText keyText D" to use the block decryption mode on input file
+ * You can use $"./cipher B inputText outputText keyText D" to use the stream encryption and decryption mode on input file. This algorithm is symmetric, not 
+ * just the key, so the last paramater (E/D) is completely un-necessary, but it is in the spec, so I require the flag anyway.
+ * For mor information see the  README.md
+ */
 
 #include <iostream>
 #include <fstream>
@@ -144,7 +151,7 @@ void block_cipher_decrypt(string &data, string &key, int block_size = 8){//used 
 }
 
 
-void stream_cipher(string &data, const std::vector<uint8_t> key){//stream cipher
+void stream_cipher(string &data, const string key){//stream cipher
 	//key size does not matter (as long as it is a multiple of 1 byte)
 	//data length does not matter either (also must be a multiple of bytes)
 	char bit_mask; 
@@ -297,11 +304,8 @@ int main (int argc, char **argv){
 		//no need to check encrypt or decrypt because it is symmetric 
 		std::vector<uint8_t> key_hex = convert_hex(key);//change the text we read in to hexadecimal
 		//stored as unint, but is hexadecimal
-		stream_cipher(data, key_hex);
+		stream_cipher(data, key);
 	}
-	string master = read_file("blockCipherText");
-	string mine = read_file("blockCipherText.mine");
-	cout << "mine " << mine.size() << " master " << master.size() << endl;
 	//write to the output file
 	write_file(output_file, data);
 
