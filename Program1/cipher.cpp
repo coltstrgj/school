@@ -82,9 +82,6 @@ std::vector<string> split_blocks(string &data, int block_size){//split data into
 		loc += block_size;
 		blocks.push_back(sub_string);
 	}
-	if(sub_string.size() != (size_t)block_size) {//if the last block is not full, we need to pad it with 0x80 "characters"
-		sub_string.resize(block_size, 0x80);//we have to pad the string with 0x80 characters if it is not full size 
-	}
 	return blocks;
 }
 
@@ -98,6 +95,7 @@ void block_xor(string &data, string &key){
 
 
 void block_cipher_encrypt(string &data, string &key, int block_size = 8){//used to decrypt data with the key. Passed reference, so we don't need to return anything
+	data.resize(block_size - (data.size() % block_size) + data.size(), 0x80);
 	//check if key is the correct size
 	if(key.size() != (size_t)block_size){
 		cout << "Error: Key file contains incorrectly formatted key" << endl;
@@ -106,6 +104,7 @@ void block_cipher_encrypt(string &data, string &key, int block_size = 8){//used 
 	//split the full data into blocks
 	//we don't necesarily need to split them, we could just create substrings instead, but this is readable, and can be easily modified
 	std::vector<string> blocks = split_blocks(data, block_size);//split the data into blocks with default of size 64 bits (8 bytes)
+	data = "";
 	for (int i = 0; (size_t)i < blocks.size(); ++i){//iterate over all of the blocks
 		//xor first
 		block_xor(blocks[i], key);//xor the block with the key
@@ -300,7 +299,9 @@ int main (int argc, char **argv){
 		//stored as unint, but is hexadecimal
 		stream_cipher(data, key_hex);
 	}
-	
+	string master = read_file("blockCipherText");
+	string mine = read_file("blockCipherText.mine");
+	cout << "mine " << mine.size() << " master " << master.size() << endl;
 	//write to the output file
 	write_file(output_file, data);
 
