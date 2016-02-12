@@ -7,8 +7,9 @@ to run it do either
  "go build Lab1.go" to compile it
   then
  "./Lab1" to run it
-if you want to generate your own keys, do the following
-  write_file("your file name", {0x1C, 0xF6, ...the rest of the keys})
+if you want to generate your own keys, add the following to main
+  write_file("your file name", {0xXW, 0xYZ, ...the rest of the keys}) //where WXYZ are the hex encoded bytes you want to use for keys. Do this before using the key file.
+  As you can see, I have commented out a line that will make a file called "new_keys" feel free to use this. 
 
 ###Main:
 This should be all that you have to edit when testing.
