@@ -1,0 +1,14 @@
+Usage: to run this programthere are two options
+1. Compile it, and then run it
+	$go build sender.go
+	and then to run it
+	$./sender data_file source_ip destination_ip source_port destination_port datagram_filename
+2. Run in the go playground
+	go run sender.go data_file source_ip destination_ip source_port destination_port datagram_filename
+In both cases, the input arguments are the same. The data_file is the file that contains the data you wish to transmit. The source and destination IP must be of the format X.X.X.X where every value is below 256.
+an example run:
+
+$./sender test.txt 192.168.1.123 173.24.24.155 1337 2077 datagram
+$./Receiver 192.168.1.123 173.24.24.155 datagram
+
+The above run will give the result of a correct checksum. In my experience, the Receiver does not work for exceptionally large inputs. My program still outputs "correctly" although much too larg for real world communication. 
