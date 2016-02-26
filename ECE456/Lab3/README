@@ -1,0 +1,33 @@
+-------------------------run_test.sh--------------------------------------------------------------------------
+run_test.sh is a shell script that will run through the whole test for you. 
+simply edit the arguments at the beggining of the program, and it will do all of the work, and output everything in a nice format
+
+You will have to provide a file for "Message" and "keys" if one does not exist. (they should exist already)
+
+This will create the following files that you can check and use individually later (for testing)
+encrypted_message.bin: the output from encrypting Message with "crypto" program
+message_datagram.bin: the datagram output from "sender" program
+received_message.bin: the message that was extracted by "receiver" if the checksum was correct (This is the exact same contents as encrypted_message.bin if all went well)
+received_message.txt: the message after decrypting it with "crypto" program. (this file should be the same as your input Message file)
+
+
+-------------------------Running Individual Programs----------------------------------------------------------
+Usage: to run these programthere are two options (replace sender.go with whatever program you want to use)
+1. Compile it, and then run it
+	$go build sender.go
+	and then to run it
+	$./sender data_file source_ip destination_ip source_port destination_port datagram_filename
+2. Run in the go playground
+	go run sender.go data_file source_ip destination_ip source_port destination_port datagram_filename
+
+Program Arguments
+-------------------------Program Arguments-----------------------------------------------------------------
+run any program with no input arguments to get a "usage" message that will explain all the paramaters that it needs
+
+EXAMPLE RUN:(if you do not use the sh file, run these commands)
+$./crypto encrypt Message.txt Keys.txt test.bin 
+$./sender test.bin 192.168.1.123 173.24.24.155 1337 2077 datagram
+$./receiver datagram 192.168.1.123 173.24.24.155 output.bin
+$./crypto decrypt output.bin Keys.txt Message.txt
+
+
