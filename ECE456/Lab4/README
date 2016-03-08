@@ -1,0 +1,24 @@
+-------------------------Running Individual Programs----------------------------------------------------------
+Usage: to run these programthere are two options (replace sender.go with whatever program you want to use)
+1. Compile it, and then run it
+	$go build UDPChat.go
+	and then to run it like a normal program (./UDPChat ...ARGS)
+2. Run in the go playground
+	go run UDPChat.go ...ARGS
+
+Program Arguments
+-------------------------Program Arguments-----------------------------------------------------------------
+run any program with no input arguments to get a usage message that will explain all the paramaters that it needs
+The arguments that the program takes are as follows (first server, then client)
+UDPChat server <source ip> <source port> <Keyfile>
+UDPChat client <source ip> <source port> <destination ip> <destionation port> <Keyfile>
+
+You will need at least two terminals to run this program and see it's functionality. 
+EXAMPLE RUN:
+Terminal 1: $ go run UDPChat 127.0.0.1 9876 Keys.txt
+Terminal 2: $ go run UDPChat 127.0.0.1 5678 127.0.0.1 9876 Keys.txt
+... For more clients you must use a new port if they are on the same machine
+Terminal N: $ go run UDPChat 127.0.0.1 XXXX 127.0.0.1 9876 Keys.txt
+Type into the clients to send text to server. The text is visible across clients provided they update themselves (via sending a message) This update would not be required if I implemented polling which would only take approximately 5 lines of code.
+
+In order to demonstrate message timeouts (and subsequent resends)  you can uncomment lines 251 and 262-265. These will purposely not respond to the first message received so client will be forced to send it again. In this test case, you will notice that the message appears twice on server and client, this is because the first message was actually successful, we just simulated a loss. A real loss would only show the message that made it correctly. Timeout is set to 2 seconds at this time. Server messages have no timeout because they are technically ACK messages to the clients original message.
