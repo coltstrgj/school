@@ -1,0 +1,20 @@
+Usage: to run these programs there are two options 
+1. Compile it, and then run it
+	$go build TCP_FT.go
+	and then to run it like a normal program (./TCP_FT ...ARGS)
+2. Run in the go playground
+	go run TCP_FT.go ...ARGS
+
+-------------------------Program Arguments-----------------------------------------------------------------
+Run any program with no input arguments to get a usage message that will explain all the paramaters that it needs
+
+Example runs (you will need a file named imagine.jpg in $PWD/tmp)
+to run the server:
+$go run TCP_FT server 40401
+--This program does require user input (instructions provided in console) when receiving a file
+
+to run the client:
+$go run TCP_FT client 127.0.0.1 40401 tmp/imagine.jpg
+
+These two programs really should be run in different terminals to get the full effect of the program(no output from one obfuscating instructions for user from another)
+the above will give a file called imagine.jpg in $PWD
