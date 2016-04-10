@@ -1,0 +1,19 @@
+Usage: to run these programs there are two options 
+1. Compile it, and then run it
+	$go build rcmd.go
+	and then to run it like a normal program (./rcmd ...ARGS)
+2. Run in the go playground
+	go run rcmd.go ...ARGS
+
+-------------------------Program Arguments-----------------------------------------------------------------
+Run any program with no input arguments to get a usage message that will explain all the paramaters that it needs
+
+Example runs (you will need a file named imagine.jpg in $PWD/tmp)
+to run the server:
+$go run rcmd.go server 40401
+--This program does require user input (instructions provided in console) when receiving a file
+
+to run the client:
+$go run rcmd.go client  127.0.0.1:40401 ls "-A -l" 5 2
+ which will run "ls" on the server with the argument"-A" and argument "-l" 5 times with a two second delay between runs 
+
